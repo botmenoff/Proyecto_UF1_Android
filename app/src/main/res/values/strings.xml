@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Android_Project</string>
+    <string name="tv_categoria_recientes">Peliculas Recientes</string>
 </resources>
