@@ -23,9 +23,9 @@ class MainActivity : AppCompatActivity() {
         listPeliculasHomeAdapter = ListPeliculasHomeAdapter(peliculas, applicationContext)
         listPeliculasHomeAdapter.generateDefaultPelis()
 
-        val rvList = binding.rvList
-        rvList.adapter = listPeliculasHomeAdapter
-        rvList.layoutManager = LinearLayoutManager(this)
+        val pelisRecientesLayout = binding.rvPeliculasRecientes
+        pelisRecientesLayout.adapter = listPeliculasHomeAdapter
+        pelisRecientesLayout.layoutManager = LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
 
     }
 }
