@@ -1,6 +1,7 @@
 package com.example.android_project
 
 import android.content.Context
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -31,6 +32,15 @@ class ListPeliculasHomeAdapter (val peliculas: MutableList<Peliculas>, val conte
             //.placeholder(R.drawable.placeholder) // Imagen de carga mientras se descarga
             //.error(R.drawable.error) // Imagen de error si falla la carga
             .into(holder.ivPelicula)
+
+        holder.itemView.setOnClickListener {
+            val context = holder.itemView.context
+            val intent = Intent(context, DetailsPeliculaView::class.java)
+            intent.putExtra("titulo", pelicula.titulo)
+            intent.putExtra("urlImagen", pelicula.urlImagen)
+            intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK
+            context.startActivity(intent)
+        }
 
     }
 
