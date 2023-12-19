@@ -38,6 +38,7 @@ class ListPeliculasHomeAdapter (val peliculas: MutableList<Peliculas>, val conte
             val intent = Intent(context, DetailsPeliculaView::class.java)
             intent.putExtra("titulo", pelicula.titulo)
             intent.putExtra("urlImagen", pelicula.urlImagen)
+            intent.putExtra("descripcion", pelicula.descripcion)
             intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK
             context.startActivity(intent)
         }
