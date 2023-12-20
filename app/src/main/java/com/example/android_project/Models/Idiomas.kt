@@ -5,5 +5,9 @@ enum class Idiomas(val nombre: String) {
     ENG("Inglés"),
     FRA("Francés"),
     ITA("Italiano"),
-    RUS("Ruso")
+    RUS("Ruso");
+
+    override fun toString(): String {
+        return "$nombre\n"
+    }
 }

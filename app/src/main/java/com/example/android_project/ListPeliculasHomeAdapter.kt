@@ -2,6 +2,7 @@ package com.example.android_project
 
 import android.content.Context
 import android.content.Intent
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -39,6 +40,11 @@ class ListPeliculasHomeAdapter (val peliculas: MutableList<Peliculas>, val conte
             intent.putExtra("titulo", pelicula.titulo)
             intent.putExtra("urlImagen", pelicula.urlImagen)
             intent.putExtra("descripcion", pelicula.descripcion)
+            intent.putExtra("reparto", pelicula.reparto.joinToString("\n"))
+            intent.putExtra("categorias", pelicula.categorias.joinToString("\n"))
+            intent.putExtra("idiomas", pelicula.idiomasDisponible.joinToString("\n"))
+            intent.putExtra("edad", pelicula.restriccionEdad.toString())
+
             intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK
             context.startActivity(intent)
         }
@@ -54,7 +60,7 @@ class ListPeliculasHomeAdapter (val peliculas: MutableList<Peliculas>, val conte
             Peliculas(
                 "Peli 1", "Lorem Ipsum...",
                 "https://play-lh.googleusercontent.com/SU1hRumo0t-zFebkVVlesNb6a1mHYPxxQJX-49jYayrMIrsmU135uxgcOglMcCB_kHfb=w240-h480-rw",
-                false, mutableListOf(Idiomas.ESP, Idiomas.ITA), RestriccionEdad.TODO_PUBLICO, mutableListOf(Categorias.ACCION, Categorias.DRAMA),
+                false, mutableListOf(Idiomas.ESP, Idiomas.ITA), RestriccionEdad.TODO_PUBLICO, mutableListOf(Categorias.ACCION, Categorias.DRAMA, Categorias.CIENCIA_FICCION),
                 mutableListOf(Actores("Pablo", "Estudiante"), Actores("Ferran", "Estudiante"))))
 
         peliculas.add(

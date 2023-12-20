@@ -6,5 +6,9 @@ enum class Categorias(val nombre: String) {
     DRAMA("Drama"),
     CIENCIA_FICCION("Ciencia Ficción"),
     ANIMACION("Animación"),
-    TERROR("Terror")
+    TERROR("Terror");
+
+    override fun toString(): String {
+        return "$nombre\n"
+    }
 }
