@@ -1,0 +1,325 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".DetailsPeliculaView">
+
+    <TextView
+        android:id="@+id/tvNombrePeli"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/ivImagenPeli"
+        android:layout_width="300dp"
+        android:layout_height="300dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvNombrePeli" />
+
+    <ScrollView
+        android:layout_width="381dp"
+        android:layout_height="338dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ivImagenPeli">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <!-- Acordeon para Titulo de la pelicula -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="8dp"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:id="@+id/acordeonTitulo"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:background="?android:attr/selectableItemBackground"
+                    android:clickable="true"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/tvTituloPeli"
+                        android:layout_width="299dp"
+                        android:layout_height="48dp"
+                        android:gravity="center"
+                        android:text="@string/tv_titulo_peli"
+                        android:textAlignment="viewStart"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toEndOf="@+id/ivExpandTitulo"
+                        app:layout_constraintTop_toTopOf="parent"
+                        tools:ignore="RtlCompat" />
+
+                    <ImageView
+                        android:id="@+id/ivExpandTitulo"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center_vertical"
+                        android:src="@drawable/expand_more_24"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@+id/tvTituloPeliOculto"
+                        app:layout_constraintTop_toTopOf="parent" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/tituloPeliOculto"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    tools:visibility="gone">
+
+                    <TextView
+                        android:id="@+id/tvTituloPeliOculto"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <!-- Acordeon para Reparto de la pelicula -->
+            <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="8dp"
+            android:orientation="vertical">
+
+                <LinearLayout
+                    android:id="@+id/acordeonReparto"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:background="?android:attr/selectableItemBackground"
+                    android:clickable="true"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/tvRepartoPeli"
+                        android:layout_width="299dp"
+                        android:layout_height="48dp"
+                        android:gravity="center"
+                        android:text="@string/tv_reparto_peli"
+                        android:textAlignment="viewStart"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toEndOf="@+id/ivExpandReparto"
+                        app:layout_constraintTop_toTopOf="parent"
+                        tools:ignore="RtlCompat" />
+
+                    <ImageView
+                        android:id="@+id/ivExpandReparto"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center_vertical"
+                        android:src="@drawable/expand_more_24"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@+id/tvRepartoPeliOculto"
+                        app:layout_constraintTop_toTopOf="parent" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/RepartoPeliOculto"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    tools:visibility="gone">
+
+                    <TextView
+                        android:id="@+id/tvRepartoPeliOculto"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <!-- Acordeon para Categorias de la pelicula -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="8dp"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:id="@+id/acordeonCategoria"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:background="?android:attr/selectableItemBackground"
+                    android:clickable="true"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/tvCategoriaPeli"
+                        android:layout_width="299dp"
+                        android:layout_height="48dp"
+                        android:gravity="center"
+                        android:text="@string/tv_categorias_peli"
+                        android:textAlignment="viewStart"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toEndOf="@+id/ivExpandCategoria"
+                        app:layout_constraintTop_toTopOf="parent"
+                        tools:ignore="RtlCompat" />
+
+                    <ImageView
+                        android:id="@+id/ivExpandCategoria"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center_vertical"
+                        android:src="@drawable/expand_more_24"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@+id/tvCategoriaPeliOculto"
+                        app:layout_constraintTop_toTopOf="parent" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/CategoriaPeliOculto"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    tools:visibility="gone">
+
+                    <TextView
+                        android:id="@+id/tvCategoriaPeliOculto"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <!-- Acordeon para Idiomas de la pelicula -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="8dp"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:id="@+id/acordeonIdiomas"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:background="?android:attr/selectableItemBackground"
+                    android:clickable="true"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/tvIdiomasPeli"
+                        android:layout_width="299dp"
+                        android:layout_height="48dp"
+                        android:gravity="center"
+                        android:text="@string/tv_idiomas_peli"
+                        android:textAlignment="viewStart"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toEndOf="@+id/ivExpandIdioma"
+                        app:layout_constraintTop_toTopOf="parent"
+                        tools:ignore="RtlCompat" />
+
+                    <ImageView
+                        android:id="@+id/ivExpandIdioma"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center_vertical"
+                        android:src="@drawable/expand_more_24"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@+id/tvIdiomaPeliOculto"
+                        app:layout_constraintTop_toTopOf="parent" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/IdiomaPeliOculto"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    tools:visibility="gone">
+
+                    <TextView
+                        android:id="@+id/tvIdiomaPeliOculto"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <!-- Acordeon para Restriccion de Edad de la pelicula -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="8dp"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:id="@+id/acordeonEdad"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:background="?android:attr/selectableItemBackground"
+                    android:clickable="true"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/tvEdadPeli"
+                        android:layout_width="299dp"
+                        android:layout_height="48dp"
+                        android:gravity="center"
+                        android:text="@string/tv_edad_peli"
+                        android:textAlignment="viewStart"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toEndOf="@+id/ivExpandEdad"
+                        app:layout_constraintTop_toTopOf="parent"
+                        tools:ignore="RtlCompat" />
+
+                    <ImageView
+                        android:id="@+id/ivExpandEdad"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center_vertical"
+                        android:src="@drawable/expand_more_24"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@+id/tvEdadPeliOculto"
+                        app:layout_constraintTop_toTopOf="parent" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/EdadPeliOculto"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    tools:visibility="gone">
+
+                    <TextView
+                        android:id="@+id/tvEdadPeliOculto"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+                </LinearLayout>
+
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
