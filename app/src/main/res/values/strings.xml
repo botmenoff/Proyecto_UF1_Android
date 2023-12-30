@@ -6,4 +6,7 @@
     <string name="tv_categorias_peli">Categorias de la película</string>
     <string name="tv_idiomas_peli">Idiomas de la película</string>
     <string name="tv_edad_peli">Clasificación de la película</string>
+    <string name="tv_icon_home">Inicio</string>
+    <string name="tv_icon_buscador">Buscar</string>
+    <string name="tv_icon_preferencias">Preferencias</string>
 </resources>
