@@ -9,4 +9,6 @@
     <string name="tv_icon_home">Inicio</string>
     <string name="tv_icon_buscador">Buscar</string>
     <string name="tv_icon_preferencias">Preferencias</string>
+    <string name="tv_categoria_cienciaficcion">Ciencia Ficción</string>
+    <string name="tv_categoria_accion">Acción</string>
 </resources>

@@ -18,14 +18,29 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         /**
-         * Creamos una instancia de la clase ListPeliculasHomeAdapter
+         * Pelis nuevas
          */
-        listPeliculasHomeAdapter = ListPeliculasHomeAdapter(peliculas, applicationContext)
+        listPeliculasHomeAdapter = ListPeliculasHomeAdapter(peliculas,"nueva", applicationContext)
         listPeliculasHomeAdapter.generateDefaultPelis()
-
         val pelisRecientesLayout = binding.rvPeliculasRecientes
         pelisRecientesLayout.adapter = listPeliculasHomeAdapter
         pelisRecientesLayout.layoutManager = LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
+
+        /**
+         * Acción
+         */
+        listPeliculasHomeAdapter = ListPeliculasHomeAdapter(peliculas,"Acción", applicationContext)
+        val pelisAccionLayout = binding.rvPeliculasAccion
+        pelisAccionLayout.adapter = listPeliculasHomeAdapter
+        pelisAccionLayout.layoutManager = LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
+
+        /**
+         * Ciencia Ficcion
+         */
+        listPeliculasHomeAdapter = ListPeliculasHomeAdapter(peliculas,"Ciencia Ficción", applicationContext)
+        val pelisCienciaFiccionLayout = binding.rvPeliculasCienciaFiccion
+        pelisCienciaFiccionLayout.adapter = listPeliculasHomeAdapter
+        pelisCienciaFiccionLayout.layoutManager = LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
 
     }
 }
