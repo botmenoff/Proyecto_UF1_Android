@@ -9,7 +9,13 @@ import com.example.android_project.databinding.ActivityMainBinding
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
     private val peliculas: MutableList<Peliculas> = mutableListOf()
-    private lateinit var listPeliculasHomeAdapter: ListPeliculasHomeAdapter
+    private lateinit var listPeliculasRecientesAdapter: ListPeliculasHomeAdapter
+    private lateinit var listPeliculasAccionAdapter: ListPeliculasHomeAdapter
+    private lateinit var listPeliculasComediaAdapter: ListPeliculasHomeAdapter
+    private lateinit var listPeliculasDramaAdapter: ListPeliculasHomeAdapter
+    private lateinit var listPeliculasCienciaFiccionAdapter: ListPeliculasHomeAdapter
+    private lateinit var listPeliculasAnimacionAdapter: ListPeliculasHomeAdapter
+    private lateinit var listPeliculasTerrorAdapter: ListPeliculasHomeAdapter
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -20,27 +26,64 @@ class MainActivity : AppCompatActivity() {
         /**
          * Pelis nuevas
          */
-        listPeliculasHomeAdapter = ListPeliculasHomeAdapter(peliculas,"nueva", applicationContext)
-        listPeliculasHomeAdapter.generateDefaultPelis()
+        listPeliculasRecientesAdapter = ListPeliculasHomeAdapter(peliculas,"nueva", applicationContext)
+        listPeliculasRecientesAdapter.generateDefaultPelis()
         val pelisRecientesLayout = binding.rvPeliculasRecientes
-        pelisRecientesLayout.adapter = listPeliculasHomeAdapter
+        pelisRecientesLayout.adapter = listPeliculasRecientesAdapter
         pelisRecientesLayout.layoutManager = LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
 
         /**
          * Acción
          */
-        listPeliculasHomeAdapter = ListPeliculasHomeAdapter(peliculas,"Acción", applicationContext)
+        listPeliculasAccionAdapter = ListPeliculasHomeAdapter(peliculas,"Acción", applicationContext)
+        listPeliculasAccionAdapter.generateDefaultPelis()
         val pelisAccionLayout = binding.rvPeliculasAccion
-        pelisAccionLayout.adapter = listPeliculasHomeAdapter
+        pelisAccionLayout.adapter = listPeliculasAccionAdapter
         pelisAccionLayout.layoutManager = LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
+
+        /**
+         * COMEDIA
+         */
+        listPeliculasComediaAdapter = ListPeliculasHomeAdapter(peliculas,"Comedia", applicationContext)
+        listPeliculasComediaAdapter.generateDefaultPelis()
+        val pelisComediaLayout = binding.rvPeliculasComedia
+        pelisComediaLayout.adapter = listPeliculasComediaAdapter
+        pelisComediaLayout.layoutManager = LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
+
+        /**
+         * DRAMA
+         */
+        listPeliculasDramaAdapter = ListPeliculasHomeAdapter(peliculas,"Drama", applicationContext)
+        listPeliculasDramaAdapter.generateDefaultPelis()
+        val pelisDramaLayout = binding.rvPeliculasDrama
+        pelisDramaLayout.adapter = listPeliculasDramaAdapter
+        pelisDramaLayout.layoutManager = LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
 
         /**
          * Ciencia Ficcion
          */
-        listPeliculasHomeAdapter = ListPeliculasHomeAdapter(peliculas,"Ciencia Ficción", applicationContext)
+        listPeliculasCienciaFiccionAdapter = ListPeliculasHomeAdapter(peliculas,"Ciencia Ficción", applicationContext)
+        listPeliculasCienciaFiccionAdapter.generateDefaultPelis()
         val pelisCienciaFiccionLayout = binding.rvPeliculasCienciaFiccion
-        pelisCienciaFiccionLayout.adapter = listPeliculasHomeAdapter
+        pelisCienciaFiccionLayout.adapter = listPeliculasCienciaFiccionAdapter
         pelisCienciaFiccionLayout.layoutManager = LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
 
+        /**
+         * ANIMACIÓN
+         */
+        listPeliculasAnimacionAdapter = ListPeliculasHomeAdapter(peliculas,"Animación", applicationContext)
+        listPeliculasAnimacionAdapter.generateDefaultPelis()
+        val pelisAnimacionLayout = binding.rvPeliculasAnimacion
+        pelisAnimacionLayout.adapter = listPeliculasAnimacionAdapter
+        pelisAnimacionLayout.layoutManager = LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
+
+        /**
+         * TERROR
+         */
+        listPeliculasTerrorAdapter = ListPeliculasHomeAdapter(peliculas,"Terror", applicationContext)
+        listPeliculasTerrorAdapter.generateDefaultPelis()
+        val pelisTerrorLayout = binding.rvPeliculasTerror
+        pelisTerrorLayout.adapter = listPeliculasTerrorAdapter
+        pelisTerrorLayout.layoutManager = LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
     }
 }

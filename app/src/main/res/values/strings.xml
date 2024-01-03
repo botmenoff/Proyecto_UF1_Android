@@ -9,6 +9,10 @@
     <string name="tv_icon_home">Inicio</string>
     <string name="tv_icon_buscador">Buscar</string>
     <string name="tv_icon_preferencias">Preferencias</string>
-    <string name="tv_categoria_cienciaficcion">Ciencia Ficción</string>
     <string name="tv_categoria_accion">Acción</string>
+    <string name="tv_categoria_comedia">Comedia</string>
+    <string name="tv_categoria_drama">Drama</string>
+    <string name="tv_categoria_cienciaficcion">Ciencia Ficción</string>
+    <string name="tv_categoria_animacion">Animación</string>
+    <string name="tv_categoria_terror">Terror</string>
 </resources>
