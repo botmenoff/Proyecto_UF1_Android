@@ -8,14 +8,22 @@ import com.example.android_project.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
-    private val peliculas: MutableList<Peliculas> = mutableListOf()
-    private lateinit var listPeliculasRecientesAdapter: ListPeliculasHomeAdapter
-    private lateinit var listPeliculasAccionAdapter: ListPeliculasHomeAdapter
-    private lateinit var listPeliculasComediaAdapter: ListPeliculasHomeAdapter
-    private lateinit var listPeliculasDramaAdapter: ListPeliculasHomeAdapter
-    private lateinit var listPeliculasCienciaFiccionAdapter: ListPeliculasHomeAdapter
-    private lateinit var listPeliculasAnimacionAdapter: ListPeliculasHomeAdapter
-    private lateinit var listPeliculasTerrorAdapter: ListPeliculasHomeAdapter
+    private val pRecientes: MutableList<Peliculas> = mutableListOf()
+    private val pAccion: MutableList<Peliculas> = mutableListOf()
+    private val pComedia: MutableList<Peliculas> = mutableListOf()
+    private val pDrama: MutableList<Peliculas> = mutableListOf()
+    private val pCienciaFiccion: MutableList<Peliculas> = mutableListOf()
+    private val pAnimacion: MutableList<Peliculas> = mutableListOf()
+    private val pTerror: MutableList<Peliculas> = mutableListOf()
+
+    private lateinit var listPeliculasRecientesAdapter: ListPeliculasAdapter
+    private lateinit var listPeliculasAccionAdapter: ListPeliculasAdapter
+    private lateinit var listPeliculasComediaAdapter: ListPeliculasAdapter
+    private lateinit var listPeliculasDramaAdapter: ListPeliculasAdapter
+    private lateinit var listPeliculasCienciaFiccionAdapter: ListPeliculasAdapter
+    private lateinit var listPeliculasAnimacionAdapter: ListPeliculasAdapter
+    private lateinit var listPeliculasTerrorAdapter: ListPeliculasAdapter
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -26,8 +34,9 @@ class MainActivity : AppCompatActivity() {
         /**
          * Pelis nuevas
          */
-        listPeliculasRecientesAdapter = ListPeliculasHomeAdapter(peliculas,"nueva", applicationContext)
-        listPeliculasRecientesAdapter.generateDefaultPelis()
+        listPeliculasRecientesAdapter = ListPeliculasAdapter(pRecientes, applicationContext)
+        listPeliculasRecientesAdapter.generarPelisRecientes()
+
         val pelisRecientesLayout = binding.rvPeliculasRecientes
         pelisRecientesLayout.adapter = listPeliculasRecientesAdapter
         pelisRecientesLayout.layoutManager = LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
@@ -35,8 +44,9 @@ class MainActivity : AppCompatActivity() {
         /**
          * Acción
          */
-        listPeliculasAccionAdapter = ListPeliculasHomeAdapter(peliculas,"Acción", applicationContext)
-        listPeliculasAccionAdapter.generateDefaultPelis()
+        listPeliculasAccionAdapter = ListPeliculasAdapter(pAccion, applicationContext)
+        listPeliculasAccionAdapter.generarPelisAccion()
+
         val pelisAccionLayout = binding.rvPeliculasAccion
         pelisAccionLayout.adapter = listPeliculasAccionAdapter
         pelisAccionLayout.layoutManager = LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
@@ -44,8 +54,9 @@ class MainActivity : AppCompatActivity() {
         /**
          * COMEDIA
          */
-        listPeliculasComediaAdapter = ListPeliculasHomeAdapter(peliculas,"Comedia", applicationContext)
-        listPeliculasComediaAdapter.generateDefaultPelis()
+        listPeliculasComediaAdapter = ListPeliculasAdapter(pComedia, applicationContext)
+        listPeliculasComediaAdapter.generarPelisComedia()
+
         val pelisComediaLayout = binding.rvPeliculasComedia
         pelisComediaLayout.adapter = listPeliculasComediaAdapter
         pelisComediaLayout.layoutManager = LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
@@ -53,8 +64,9 @@ class MainActivity : AppCompatActivity() {
         /**
          * DRAMA
          */
-        listPeliculasDramaAdapter = ListPeliculasHomeAdapter(peliculas,"Drama", applicationContext)
-        listPeliculasDramaAdapter.generateDefaultPelis()
+        listPeliculasDramaAdapter = ListPeliculasAdapter(pDrama, applicationContext)
+        listPeliculasDramaAdapter.generarPelisDrama()
+
         val pelisDramaLayout = binding.rvPeliculasDrama
         pelisDramaLayout.adapter = listPeliculasDramaAdapter
         pelisDramaLayout.layoutManager = LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
@@ -62,8 +74,9 @@ class MainActivity : AppCompatActivity() {
         /**
          * Ciencia Ficcion
          */
-        listPeliculasCienciaFiccionAdapter = ListPeliculasHomeAdapter(peliculas,"Ciencia Ficción", applicationContext)
-        listPeliculasCienciaFiccionAdapter.generateDefaultPelis()
+        listPeliculasCienciaFiccionAdapter = ListPeliculasAdapter(pCienciaFiccion, applicationContext)
+        listPeliculasCienciaFiccionAdapter.generarPelisCienciaFiccion()
+
         val pelisCienciaFiccionLayout = binding.rvPeliculasCienciaFiccion
         pelisCienciaFiccionLayout.adapter = listPeliculasCienciaFiccionAdapter
         pelisCienciaFiccionLayout.layoutManager = LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
@@ -71,8 +84,9 @@ class MainActivity : AppCompatActivity() {
         /**
          * ANIMACIÓN
          */
-        listPeliculasAnimacionAdapter = ListPeliculasHomeAdapter(peliculas,"Animación", applicationContext)
-        listPeliculasAnimacionAdapter.generateDefaultPelis()
+        listPeliculasAnimacionAdapter = ListPeliculasAdapter(pAnimacion, applicationContext)
+        listPeliculasAnimacionAdapter.generarPelisAnimacion()
+
         val pelisAnimacionLayout = binding.rvPeliculasAnimacion
         pelisAnimacionLayout.adapter = listPeliculasAnimacionAdapter
         pelisAnimacionLayout.layoutManager = LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
@@ -80,8 +94,9 @@ class MainActivity : AppCompatActivity() {
         /**
          * TERROR
          */
-        listPeliculasTerrorAdapter = ListPeliculasHomeAdapter(peliculas,"Terror", applicationContext)
-        listPeliculasTerrorAdapter.generateDefaultPelis()
+        listPeliculasTerrorAdapter = ListPeliculasAdapter(pTerror, applicationContext)
+        listPeliculasTerrorAdapter.generarPelisTerror()
+
         val pelisTerrorLayout = binding.rvPeliculasTerror
         pelisTerrorLayout.adapter = listPeliculasTerrorAdapter
         pelisTerrorLayout.layoutManager = LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
