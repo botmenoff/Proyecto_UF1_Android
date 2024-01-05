@@ -1,5 +1,6 @@
 package com.example.android_project
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -100,5 +101,16 @@ class MainActivity : AppCompatActivity() {
         val pelisTerrorLayout = binding.rvPeliculasTerror
         pelisTerrorLayout.adapter = listPeliculasTerrorAdapter
         pelisTerrorLayout.layoutManager = LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
+
+
+        /**
+         * MENU
+         */
+        var lyPreferencias = binding.lyPreferencias
+
+        lyPreferencias.setOnClickListener {
+            val intent = Intent(this, PreferenciasView::class.java)
+            startActivity(intent)
+        }
     }
 }
