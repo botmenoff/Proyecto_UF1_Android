@@ -3,6 +3,7 @@ package com.example.android_project
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.android_project.Models.Peliculas
 import com.example.android_project.databinding.ActivityMainBinding
@@ -31,6 +32,15 @@ class MainActivity : AppCompatActivity() {
 
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        /**
+         * Obtemos los parametros pasados en caso de tener
+         */
+        val extras = intent.extras
+        val estaRegistrado = extras?.getBoolean("estaRegistrado")
+        val nombreUsuario = extras?.getString("nombreUsuario").toString()
+        val categoriasPreferidas = extras?.getString("categoriasPreferidas").toString()
+        val edadSeleccionada = extras?.getString("edadSeleccionada").toString()
 
         /**
          * Pelis nuevas
@@ -110,6 +120,14 @@ class MainActivity : AppCompatActivity() {
 
         lyPreferencias.setOnClickListener {
             val intent = Intent(this, PreferenciasView::class.java)
+
+            if (estaRegistrado == true) {
+                intent.putExtra("estaRegistrado", estaRegistrado)
+                intent.putExtra("nombreUsuario", nombreUsuario)
+                intent.putExtra("categoriasPreferidas", categoriasPreferidas)
+                intent.putExtra("edadSeleccionada", edadSeleccionada)
+            }
+
             startActivity(intent)
         }
     }

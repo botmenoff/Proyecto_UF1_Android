@@ -39,6 +39,7 @@
             android:text="@string/tv_escribir_nombre" />
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/inp_nombre"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/inp_nombre"
