@@ -57,10 +57,43 @@ class PreferenciasView : AppCompatActivity() {
         var lyMasDieciocho = binding.lyMasDieciocho
 
         /**
-         * Esta variable nos permitira saber cual es el layout que ha elegido el usuario
+         * Estas variables nos permitiran saber cual es el layout que ha elegido el usuario
          */
         var layoutSeleccionado = lyTodosPublicos
         var ivCheckSelecionado = ivCheckTodosPublicos
+
+        /**
+         * Mostramos la edad que tenia guardada el usuario
+         */
+        val e = RestriccionEdad.values().find { it.nombre.equals(edadSeleccionadaString, ignoreCase = true) }
+        if (e != null) {
+
+            /**
+             * Mostramos el check en el layout correspondiente
+             */
+            when (e) {
+                RestriccionEdad.MAYORES_DE_7 -> {
+                    layoutSeleccionado = lyMasSiete
+                    ivCheckSelecionado = ivCheckSiete
+                    ivCheckTodosPublicos.visibility = View.INVISIBLE
+                    ivCheckSiete.visibility = View.VISIBLE
+                }
+                RestriccionEdad.MAYORES_DE_13 -> {
+                    layoutSeleccionado = lyMasTrece
+                    ivCheckSelecionado = ivCheckTrece
+                    ivCheckTodosPublicos.visibility = View.INVISIBLE
+                    ivCheckTrece.visibility = View.VISIBLE
+                }
+                RestriccionEdad.MAYORES_DE_18 -> {
+                    layoutSeleccionado = lyMasDieciocho
+                    ivCheckSelecionado = ivCheckDieciocho
+                    ivCheckTodosPublicos.visibility = View.INVISIBLE
+                    ivCheckDieciocho.visibility = View.VISIBLE
+                }
+
+                else -> {} // En el caso de que sea TODO_PUBLICO, no hacemos nada
+            }
+        }
 
         /**
          * Evento que muestra el check del LY "Apto para todos los públicos"
@@ -136,9 +169,10 @@ class PreferenciasView : AppCompatActivity() {
         /**
          * Guardamos en nuestro array de categorias preferidas las categorias que teniamos anteriormente
          */
-        val categoriasArray = categoriasPreferidasString.split(",")
-        for (categoria in categoriasArray) {
-            val c = Categorias.values().find { it.nombre == categoria }
+        var categoriasArray = categoriasPreferidasString.split("\n,")
+        for (categoriaArray in categoriasArray) {
+            val categoria = categoriaArray.replace("\n", "") // esta comprobación la hacemos pq el último carácter de "categoriasArray" siempre tendra un \n y por este motivo no entrara en el find()
+            val c = Categorias.values().find { it.nombre.equals(categoria, ignoreCase = true) }
             if (c != null) {
                 categoriasPreferidas.add(c)
 
@@ -155,7 +189,6 @@ class PreferenciasView : AppCompatActivity() {
                 }
             }
         }
-
 
         /**
          * Evento que guarda o elimina la categoria ACCION de las preferencias del usuario
@@ -249,6 +282,12 @@ class PreferenciasView : AppCompatActivity() {
                 intent.putExtra("nombreUsuario", inpNombre.text.toString())
                 intent.putExtra("categoriasPreferidas", categoriasPreferidas.joinToString(","))
                 intent.putExtra("edadSeleccionada", edadSeleccionada.toString())
+            }
+            else if (!usuarioRegistrado && estaRegistrado == true) { // En el caso de que el usuario tenia guardado anteriormente sus preferencias
+                intent.putExtra("estaRegistrado", estaRegistrado)
+                intent.putExtra("nombreUsuario", nombreUsuario)
+                intent.putExtra("categoriasPreferidas", categoriasPreferidasString)
+                intent.putExtra("edadSeleccionada", edadSeleccionadaString)
             }
             startActivity(intent)
         }
