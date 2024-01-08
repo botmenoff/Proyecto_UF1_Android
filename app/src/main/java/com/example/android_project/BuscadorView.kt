@@ -28,7 +28,13 @@ class BuscadorView : AppCompatActivity() {
         val categoriasPreferidas = extras?.getString("categoriasPreferidas").toString()
         val edadSeleccionada = extras?.getString("edadSeleccionada").toString()
 
-        // TODO: Hacer el esqueleto de la funcion de Buscar con los filtros
+        // Para los filtros
+        val filterFragment = FilterFragment()
+        val btn_filters = findViewById<ImageButton>(R.id.showFilters)
+
+        btn_filters.setOnClickListener {
+            filterFragment.show(supportFragmentManager, "Fragment to show")
+        }
 
         /**
          * MENU
