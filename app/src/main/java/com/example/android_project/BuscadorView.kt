@@ -28,29 +28,7 @@ class BuscadorView : AppCompatActivity() {
         val categoriasPreferidas = extras?.getString("categoriasPreferidas").toString()
         val edadSeleccionada = extras?.getString("edadSeleccionada").toString()
 
-        // Para los filtros
-        val filterFragment = FilterFragment()
-        val btn_filters = findViewById<ImageButton>(R.id.showFilters)
-
-        btn_filters.setOnClickListener {
-            filterFragment.show(supportFragmentManager, "Fragment to show")
-        }
-
-        // Buscador
-        val searchBtn = findViewById<ImageButton>(R.id.searchButton)
-        val searchInput = findViewById<TextInputEditText>(R.id.searchInput)
-        searchBtn.setOnClickListener {
-            // Coger el texto que el usuario pone
-            val userText = searchInput.text.toString()
-
-            // Llamar a la API
-
-
-            // Toast para mostrar lo que ha escrito el usuario
-            Toast.makeText(this, "Texto buscado: [" + userText + "]", Toast.LENGTH_SHORT).show()
-            // Eliminar el texto cuando se busca
-            searchInput.text?.clear()
-        }
+        // TODO: Hacer el esqueleto de la funcion de Buscar con los filtros
 
         /**
          * MENU

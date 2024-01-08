@@ -295,6 +295,18 @@ class PreferenciasView : AppCompatActivity() {
         var lyBuscador = binding.lyBuscador
         lyBuscador.setOnClickListener {
             val intent = Intent(this, BuscadorView::class.java)
+            if (usuarioRegistrado) {
+                intent.putExtra("estaRegistrado", usuarioRegistrado)
+                intent.putExtra("nombreUsuario", inpNombre.text.toString())
+                intent.putExtra("categoriasPreferidas", categoriasPreferidas.joinToString(","))
+                intent.putExtra("edadSeleccionada", edadSeleccionada.toString())
+            }
+            else if (!usuarioRegistrado && estaRegistrado == true) { // En el caso de que el usuario tenia guardado anteriormente sus preferencias
+                intent.putExtra("estaRegistrado", estaRegistrado)
+                intent.putExtra("nombreUsuario", nombreUsuario)
+                intent.putExtra("categoriasPreferidas", categoriasPreferidasString)
+                intent.putExtra("edadSeleccionada", edadSeleccionadaString)
+            }
             startActivity(intent)
         }
     }
