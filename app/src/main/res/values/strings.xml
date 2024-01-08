@@ -6,4 +6,25 @@
     <string name="tv_categorias_peli">Categorias de la película</string>
     <string name="tv_idiomas_peli">Idiomas de la película</string>
     <string name="tv_edad_peli">Clasificación de la película</string>
+    <string name="tv_icon_home">Inicio</string>
+    <string name="tv_icon_buscador">Buscar</string>
+    <string name="tv_icon_preferencias">Preferencias</string>
+    <string name="tv_categoria_accion">Acción</string>
+    <string name="tv_categoria_comedia">Comedia</string>
+    <string name="tv_categoria_drama">Drama</string>
+    <string name="tv_categoria_cienciaficcion">Ciencia Ficción</string>
+    <string name="tv_categoria_animacion">Animación</string>
+    <string name="tv_categoria_terror">Terror</string>
+
+    <!-- DetailsView -->
+    <string name="tv_preferencias">Configura tus preferencias</string>
+    <string name="tv_escribir_nombre">Escribe tu nombre</string>
+    <string name="inp_nombre">Me llamo …</string>
+    <string name="tv_categorias_favoritas">Selecciona tus categorias favoritas</string>
+    <string name="tv_seleccionar_edad">Selecciona la edad de la película</string>
+    <string name="tv_apta_todos_publicos">Apta para todos los públicos</string>
+    <string name="tv_mayores_siete">Mayores de 7 años</string>
+    <string name="tv_mayores_trece">Mayores de 13 años</string>
+    <string name="tv_mayores_dieciocho">Mayores de 18 años</string>
+    <string name="btn_guardar">Guardar Preferencias</string>
 </resources>
