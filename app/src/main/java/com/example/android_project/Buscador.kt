@@ -25,10 +25,14 @@ class Buscador : AppCompatActivity() {
         val searchBtn = findViewById<ImageButton>(R.id.searchButton)
         val searchInput = findViewById<TextInputEditText>(R.id.searchInput)
         searchBtn.setOnClickListener {
-            // Make the API call
+            // Coger el texto que el usuario pone
+            val userText = searchInput.text.toString()
+
+            // Llamar a la API
+
 
             // Toast para mostrar lo que ha escrito el usuario
-            Toast.makeText(this, "Texto buscado: " + searchInput.text.toString(), Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, "Texto buscado: [" + userText + "]", Toast.LENGTH_SHORT).show()
             // Eliminar el texto cuando se busca
             searchInput.text?.clear()
         }
