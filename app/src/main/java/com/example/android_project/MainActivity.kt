@@ -3,7 +3,10 @@ package com.example.android_project
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
+import android.view.View
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.android_project.Models.Categorias
 import com.example.android_project.Models.Peliculas
 import com.example.android_project.databinding.ActivityMainBinding
 
@@ -16,6 +19,7 @@ class MainActivity : AppCompatActivity() {
     private val pCienciaFiccion: MutableList<Peliculas> = mutableListOf()
     private val pAnimacion: MutableList<Peliculas> = mutableListOf()
     private val pTerror: MutableList<Peliculas> = mutableListOf()
+    private val listCategoriasPreferidas: MutableList<Categorias> = mutableListOf()
 
     private lateinit var listPeliculasRecientesAdapter: ListPeliculasAdapter
     private lateinit var listPeliculasAccionAdapter: ListPeliculasAdapter
@@ -42,10 +46,78 @@ class MainActivity : AppCompatActivity() {
         val edadSeleccionada = extras?.getString("edadSeleccionada").toString()
 
         /**
+         * Evento que filtra las categorias elegidas por el usuario cuando se activa el switch
+         */
+        val lyAccion = binding.lyAccion
+        val lyComedia = binding.lyComedia
+        val lyDrama = binding.lyDrama
+        val lyCienciaFiccion = binding.lyCienciaFiccion
+        val lyAnimacion = binding.lyAnimacion
+        val lyTerror = binding.lyTerror
+        val categoriasArray = categoriasPreferidas.split("\n,")
+        val tvNombreUsuario = binding.tvNombreUsuario
+        val swPreferencias = binding.swPreferencias
+        if (estaRegistrado == true) {
+            tvNombreUsuario.visibility = View.VISIBLE
+            tvNombreUsuario.text = "Binevenido $nombreUsuario"
+            swPreferencias.visibility = View.VISIBLE
+        }
+
+        swPreferencias.setOnClickListener {
+            val categoriasNoPreferidas: MutableList<Categorias> = mutableListOf()
+
+            for (categoriaArray in categoriasArray) {
+                val categoria = categoriaArray.replace("\n", "")
+                val c = Categorias.values().find { it.nombre.equals(categoria, ignoreCase = true) }
+                if (c != null) {
+                    listCategoriasPreferidas.add(c)
+                }
+            }
+            // TODO aqui deberiamos guardar las que NO han entrado
+            // categoriasNoPreferidas.notIn(listCategoriasPreferidas)
+
+            // Ocultar o mostrar layouts según las categorías no preferidas
+            if (swPreferencias.isChecked) {
+                categoriasNoPreferidas.forEach { categoria ->
+                    when (categoria) {
+                        Categorias.ACCION -> lyAccion.visibility = View.GONE
+                        Categorias.COMEDIA -> lyComedia.visibility = View.GONE
+                        Categorias.DRAMA -> lyDrama.visibility = View.GONE
+                        Categorias.CIENCIA_FICCION -> lyCienciaFiccion.visibility = View.GONE
+                        Categorias.ANIMACION -> lyAnimacion.visibility = View.GONE
+                        Categorias.TERROR -> lyTerror.visibility = View.GONE
+                        else -> {}
+                    }
+                }
+            } else {
+                categoriasNoPreferidas.forEach { categoria ->
+                    when (categoria) {
+                        Categorias.ACCION -> lyAccion.visibility = View.VISIBLE
+                        Categorias.COMEDIA -> lyComedia.visibility = View.VISIBLE
+                        Categorias.DRAMA -> lyDrama.visibility = View.VISIBLE
+                        Categorias.CIENCIA_FICCION -> lyCienciaFiccion.visibility = View.VISIBLE
+                        Categorias.ANIMACION -> lyAnimacion.visibility = View.VISIBLE
+                        Categorias.TERROR -> lyTerror.visibility = View.VISIBLE
+                        else -> {}
+                    }
+                }
+            }
+        }
+
+
+
+        /**
          * Pelis nuevas
          */
         listPeliculasRecientesAdapter = ListPeliculasAdapter(pRecientes, applicationContext)
-        listPeliculasRecientesAdapter.generarPelisRecientes()
+        if ((estaRegistrado == true) && (swPreferencias.isChecked)) {
+            val lyRecientes = binding.lyRecientes
+            if (listCategoriasPreferidas.contains(Categorias.ESTRENO)) {
+                lyRecientes.visibility = View.GONE
+            }
+        } else if ((estaRegistrado == false) || (!swPreferencias.isChecked)) {
+            listPeliculasRecientesAdapter.generarPelisRecientes()
+        }
 
         val pelisRecientesLayout = binding.rvPeliculasRecientes
         pelisRecientesLayout.adapter = listPeliculasRecientesAdapter
@@ -55,6 +127,16 @@ class MainActivity : AppCompatActivity() {
          * Acción
          */
         listPeliculasAccionAdapter = ListPeliculasAdapter(pAccion, applicationContext)
+        /*
+        if ((estaRegistrado == true) && (swPreferencias.isChecked)) { // TODO
+            val lyAccion = binding.lyAccion
+            if (listCategoriasPreferidas.contains(Categorias.ACCION)) {
+                lyAccion.visibility = View.GONE
+            }
+        } else if ((estaRegistrado == false) || (!swPreferencias.isChecked)) {
+            listPeliculasAccionAdapter.generarPelisRecientes()
+        }
+        */
         listPeliculasAccionAdapter.generarPelisAccion()
 
         val pelisAccionLayout = binding.rvPeliculasAccion

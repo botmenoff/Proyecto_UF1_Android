@@ -169,7 +169,7 @@ class PreferenciasView : AppCompatActivity() {
         /**
          * Guardamos en nuestro array de categorias preferidas las categorias que teniamos anteriormente
          */
-        var categoriasArray = categoriasPreferidasString.split("\n,")
+        val categoriasArray = categoriasPreferidasString.split("\n,")
         for (categoriaArray in categoriasArray) {
             val categoria = categoriaArray.replace("\n", "") // esta comprobación la hacemos pq el último carácter de "categoriasArray" siempre tendra un \n y por este motivo no entrara en el find()
             val c = Categorias.values().find { it.nombre.equals(categoria, ignoreCase = true) }
@@ -186,6 +186,7 @@ class PreferenciasView : AppCompatActivity() {
                     Categorias.CIENCIA_FICCION -> swCienciaFiccion.isChecked = true
                     Categorias.ANIMACION -> swAnimacion.isChecked = true
                     Categorias.TERROR -> swTerror.isChecked = true
+                    else -> {}
                 }
             }
         }

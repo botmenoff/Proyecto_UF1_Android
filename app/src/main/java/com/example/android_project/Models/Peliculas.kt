@@ -4,7 +4,6 @@ class Peliculas(
     val titulo: String,
     val descripcion: String,
     val urlImagen: String,
-    val esNueva: Boolean,
     val idiomasDisponible: MutableList<Idiomas>,
     val restriccionEdad: RestriccionEdad,
     val categorias: MutableList<Categorias>,
