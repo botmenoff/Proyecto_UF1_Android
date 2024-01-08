@@ -39,10 +39,6 @@ class BottomSheetFragment: BottomSheetDialogFragment() {
             searchFilters(filterList)
         }
 
-        /**
-         * Lista que añade o elimina los filtros seleccionados
-         */
-
         val restriccion_mas_siete = view.findViewById<CheckBox>(R.id.restriccion_mas_siete)
         val restriccion_mas_catorce = view.findViewById<CheckBox>(R.id.restriccion_mas_catorze)
         val restriccion_mas_dieciocho = view.findViewById<CheckBox>(R.id.restriccion_mas_dieciocho)
@@ -67,28 +63,31 @@ class BottomSheetFragment: BottomSheetDialogFragment() {
             updateFilterList("+18", isChecked)
         }
 
+        /**
+         * Los números al lado de los nombres son los id de las categorias de la API que vamos a utilizar
+         */
         categorias_accion.setOnCheckedChangeListener { _, isChecked ->
-            updateFilterList("accion", isChecked)
+            updateFilterList("accion28", isChecked)
         }
 
         categorias_comedia.setOnCheckedChangeListener { _, isChecked ->
-            updateFilterList("comedia", isChecked)
+            updateFilterList("comedia35", isChecked)
         }
 
         categorias_drama.setOnCheckedChangeListener { _, isChecked ->
-            updateFilterList("drama", isChecked)
+            updateFilterList("drama18", isChecked)
         }
 
         categorias_ciencia.setOnCheckedChangeListener { _, isChecked ->
-            updateFilterList("ciencia", isChecked)
+            updateFilterList("ciencia878", isChecked)
         }
 
         categorias_animacion.setOnCheckedChangeListener { _, isChecked ->
-            updateFilterList("animacion", isChecked)
+            updateFilterList("animacion16", isChecked)
         }
 
         categorias_terror.setOnCheckedChangeListener { _, isChecked ->
-            updateFilterList("terror", isChecked)
+            updateFilterList("terror27", isChecked)
         }
     }
 
@@ -101,13 +100,12 @@ class BottomSheetFragment: BottomSheetDialogFragment() {
     }
 
     private fun searchFilters(filterList: ArrayList<String>) {
-        // Aquí puedes realizar acciones con la lista de filtros seleccionados
-        // Por ejemplo, mostrar un Toast con los filtros seleccionados
+        // Mostrar un Toast con los filtros seleccionados
         val filtersText = if (filterList.isEmpty()) "No se han seleccionado filtros"
         else "Filtros seleccionados: ${filterList.joinToString(", ")}"
-
         // Mostrar Toast
-        // Puedes cambiar 'requireContext()' por 'context' si estás fuera de un fragmento
-        Toast.makeText(requireContext(), filtersText, Toast.LENGTH_SHORT).show()
+        Toast.makeText(context, filtersText, Toast.LENGTH_SHORT).show()
+
+        // Hacer una llamada a la API con los filtros aplicados
     }
 }
