@@ -4,9 +4,6 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
-import com.google.android.material.shape.MaterialShapeDrawable
-import com.google.android.material.shape.ShapeAppearanceModel
-import com.google.android.material.textfield.TextInputLayout
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -19,7 +16,5 @@ class MainActivity : AppCompatActivity() {
             val intent = Intent(this, Buscador::class.java)
             startActivity(intent)
         }
-
-
     }
 }

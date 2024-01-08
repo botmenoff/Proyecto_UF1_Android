@@ -8,11 +8,11 @@ import android.widget.Button
 import android.widget.CheckBox
 import android.widget.ImageButton
 import android.widget.Toast
-import androidx.lifecycle.findViewTreeViewModelStoreOwner
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 
 class BottomSheetFragment: BottomSheetDialogFragment() {
 
+    // ArrayList para guardar los filtros que el usuario selecciona
     private val filterList = ArrayList<String>()
 
     override fun onCreateView(
@@ -31,9 +31,7 @@ class BottomSheetFragment: BottomSheetDialogFragment() {
             dismiss()
         }
 
-        /**
-         * Buscar filtros
-         * */
+        // Buscar filtros
         val searchFilters = view.findViewById<Button>(R.id.apply_filters)
         searchFilters.setOnClickListener {
             searchFilters(filterList)
@@ -63,9 +61,7 @@ class BottomSheetFragment: BottomSheetDialogFragment() {
             updateFilterList("+18", isChecked)
         }
 
-        /**
-         * Los números al lado de los nombres son los id de las categorias de la API que vamos a utilizar
-         */
+        // Los números al lado de los nombres son los id de las categorias de la API que vamos a utilizar
         categorias_accion.setOnCheckedChangeListener { _, isChecked ->
             updateFilterList("accion28", isChecked)
         }
@@ -107,5 +103,6 @@ class BottomSheetFragment: BottomSheetDialogFragment() {
         Toast.makeText(context, filtersText, Toast.LENGTH_SHORT).show()
 
         // Hacer una llamada a la API con los filtros aplicados
+
     }
 }

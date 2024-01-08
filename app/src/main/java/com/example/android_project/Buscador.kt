@@ -2,10 +2,8 @@ package com.example.android_project
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.Button
 import android.widget.ImageButton
 import android.widget.Toast
-import androidx.core.content.ContentProviderCompat.requireContext
 import com.google.android.material.textfield.TextInputEditText
 
 class Buscador : AppCompatActivity() {
