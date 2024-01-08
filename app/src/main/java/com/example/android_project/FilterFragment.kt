@@ -10,7 +10,7 @@ import android.widget.ImageButton
 import android.widget.Toast
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 
-class BottomSheetFragment: BottomSheetDialogFragment() {
+class FilterFragment: BottomSheetDialogFragment() {
 
     // ArrayList para guardar los filtros que el usuario selecciona
     private val filterList = ArrayList<String>()

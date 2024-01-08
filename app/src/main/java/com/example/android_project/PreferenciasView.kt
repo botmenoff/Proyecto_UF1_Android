@@ -291,5 +291,11 @@ class PreferenciasView : AppCompatActivity() {
             }
             startActivity(intent)
         }
+
+        var lyBuscador = binding.lyBuscador
+        lyBuscador.setOnClickListener {
+            val intent = Intent(this, BuscadorView::class.java)
+            startActivity(intent)
+        }
     }
 }
