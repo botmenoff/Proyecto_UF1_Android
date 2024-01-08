@@ -1,5 +1,6 @@
 package com.example.android_project
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -8,6 +9,7 @@ import com.example.android_project.databinding.ActivityMainBinding
 
 import android.widget.TextView
 import com.example.android_project.ApiCalls.ApiCalls
+import android.widget.Button
 
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
@@ -49,6 +51,12 @@ class MainActivity : AppCompatActivity() {
                     "Error calling the API"
                 }
             }
+
+        val changeViewButton: Button = findViewById(R.id.changeView)
+
+        changeViewButton.setOnClickListener {
+            val intent = Intent(this, Buscador::class.java)
+            startActivity(intent)
         }
     }
 }
