@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.android_project.Models.Peliculas
+import com.example.android_project.Models.PeliculasStore
 import com.example.android_project.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
@@ -31,6 +32,33 @@ class MainActivity : AppCompatActivity() {
 
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        /**
+         * Añado todas las pelis a PelisStore para poder usarlo en otros sitios
+         */
+        // Iterar sobre la mutableList
+        for (peli in pRecientes) {
+            PeliculasStore.agregarPelicula(peli)
+        }
+        for (peli in pAccion) {
+            PeliculasStore.agregarPelicula(peli)
+        }
+        for (peli in pComedia) {
+            PeliculasStore.agregarPelicula(peli)
+        }
+        for (peli in pDrama) {
+            PeliculasStore.agregarPelicula(peli)
+        }
+        for (peli in pCienciaFiccion) {
+            PeliculasStore.agregarPelicula(peli)
+        }
+        for (peli in pAccion) {
+            PeliculasStore.agregarPelicula(peli)
+        }
+        for (peli in pTerror) {
+            PeliculasStore.agregarPelicula(peli)
+        }
+
 
         /**
          * Obtemos los parametros pasados en caso de tener
