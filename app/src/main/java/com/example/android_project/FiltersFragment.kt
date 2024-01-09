@@ -4,16 +4,13 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
-import android.widget.CheckBox
-import android.widget.ImageButton
-import android.widget.Toast
 import com.example.android_project.Models.RestriccionEdad
-import com.example.android_project.databinding.ActivityPreferenciasViewBinding
 import com.example.android_project.databinding.FiltersBinding
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
+import androidx.fragment.app.viewModels
 
-class FilterFragment : BottomSheetDialogFragment() {
+
+class FiltersFragment : BottomSheetDialogFragment() {
 
     private lateinit var binding: FiltersBinding // Asegúrate de que el nombre del archivo de diseño coincide
     private var edadSeleccionadaString: String? = null
@@ -30,6 +27,7 @@ class FilterFragment : BottomSheetDialogFragment() {
         return binding.root
     }
 
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
@@ -41,7 +39,15 @@ class FilterFragment : BottomSheetDialogFragment() {
         }
 
 
-        // TODO: Hacer el esqueleto para pasar los filtros a la funcion de buscar
+        /**
+         * COGEMOS TODOS LOS SWICH
+         */
+        val accionSw = binding.swAccion
+        val comediaSw = binding.swComedia
+        val dramaSw = binding.swDrama
+        val cienciaSw = binding.swCienciaFiccion
+        val animacionSw = binding.swAnimacion
+        val terrorSw = binding.swTerror
 
         /**
          * CODIGO PARA MOVER EL CHECK

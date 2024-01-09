@@ -15,6 +15,9 @@ class DetailsPeliculaView : AppCompatActivity() {
         binding = ActivityDetailsPeliculaViewBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        // Activar el backArrow
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+
         val tvTitulo = binding.tvNombrePeli
         val ivImagen = binding.ivImagenPeli
 
