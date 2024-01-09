@@ -19,7 +19,6 @@ class MainActivity : AppCompatActivity() {
     private val pCienciaFiccion: MutableList<Peliculas> = mutableListOf()
     private val pAnimacion: MutableList<Peliculas> = mutableListOf()
     private val pTerror: MutableList<Peliculas> = mutableListOf()
-    private val listCategoriasPreferidas: MutableList<Categorias> = mutableListOf()
 
     private lateinit var listPeliculasRecientesAdapter: ListPeliculasAdapter
     private lateinit var listPeliculasAccionAdapter: ListPeliculasAdapter
@@ -64,17 +63,8 @@ class MainActivity : AppCompatActivity() {
         }
 
         swPreferencias.setOnClickListener {
-            val categoriasNoPreferidas: MutableList<Categorias> = mutableListOf()
-
-            for (categoriaArray in categoriasArray) {
-                val categoria = categoriaArray.replace("\n", "")
-                val c = Categorias.values().find { it.nombre.equals(categoria, ignoreCase = true) }
-                if (c != null) {
-                    listCategoriasPreferidas.add(c)
-                }
-            }
-            // TODO aqui deberiamos guardar las que NO han entrado
-            // categoriasNoPreferidas.notIn(listCategoriasPreferidas)
+            val categoriasNoPreferidas = Categorias.values()
+                .filterNot { categoriasArray.any { categoriaArray -> it.nombre.equals(categoriaArray.replace("\n", ""), ignoreCase = true) } }
 
             // Ocultar o mostrar layouts según las categorías no preferidas
             if (swPreferencias.isChecked) {
@@ -104,20 +94,11 @@ class MainActivity : AppCompatActivity() {
             }
         }
 
-
-
         /**
          * Pelis nuevas
          */
         listPeliculasRecientesAdapter = ListPeliculasAdapter(pRecientes, applicationContext)
-        if ((estaRegistrado == true) && (swPreferencias.isChecked)) {
-            val lyRecientes = binding.lyRecientes
-            if (listCategoriasPreferidas.contains(Categorias.ESTRENO)) {
-                lyRecientes.visibility = View.GONE
-            }
-        } else if ((estaRegistrado == false) || (!swPreferencias.isChecked)) {
-            listPeliculasRecientesAdapter.generarPelisRecientes()
-        }
+        listPeliculasRecientesAdapter.generarPelisRecientes()
 
         val pelisRecientesLayout = binding.rvPeliculasRecientes
         pelisRecientesLayout.adapter = listPeliculasRecientesAdapter
@@ -127,16 +108,6 @@ class MainActivity : AppCompatActivity() {
          * Acción
          */
         listPeliculasAccionAdapter = ListPeliculasAdapter(pAccion, applicationContext)
-        /*
-        if ((estaRegistrado == true) && (swPreferencias.isChecked)) { // TODO
-            val lyAccion = binding.lyAccion
-            if (listCategoriasPreferidas.contains(Categorias.ACCION)) {
-                lyAccion.visibility = View.GONE
-            }
-        } else if ((estaRegistrado == false) || (!swPreferencias.isChecked)) {
-            listPeliculasAccionAdapter.generarPelisRecientes()
-        }
-        */
         listPeliculasAccionAdapter.generarPelisAccion()
 
         val pelisAccionLayout = binding.rvPeliculasAccion
@@ -197,8 +168,8 @@ class MainActivity : AppCompatActivity() {
         /**
          * MENU
          */
-        var lyPreferencias = binding.lyPreferencias
-        var lyBuscador = binding.lyBuscador
+        val lyPreferencias = binding.lyPreferencias
+        val lyBuscador = binding.lyBuscador
 
         lyPreferencias.setOnClickListener {
             val intent = Intent(this, PreferenciasView::class.java)
