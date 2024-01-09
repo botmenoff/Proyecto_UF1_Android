@@ -53,7 +53,6 @@ class MainActivity : AppCompatActivity() {
         val lyCienciaFiccion = binding.lyCienciaFiccion
         val lyAnimacion = binding.lyAnimacion
         val lyTerror = binding.lyTerror
-        val categoriasArray = categoriasPreferidas.split("\n,")
         val tvNombreUsuario = binding.tvNombreUsuario
         val swPreferencias = binding.swPreferencias
         if (estaRegistrado == true) {
@@ -62,6 +61,7 @@ class MainActivity : AppCompatActivity() {
             swPreferencias.visibility = View.VISIBLE
         }
 
+        val categoriasArray = categoriasPreferidas.split("\n,")
         swPreferencias.setOnClickListener {
             val categoriasNoPreferidas = Categorias.values()
                 .filterNot { categoriasArray.any { categoriaArray -> it.nombre.equals(categoriaArray.replace("\n", ""), ignoreCase = true) } }
