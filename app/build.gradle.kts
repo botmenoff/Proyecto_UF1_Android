@@ -56,4 +56,11 @@ dependencies {
     // Para hacer llamadas a la API
     implementation("com.squareup.okhttp3:okhttp:4.9.0")
     implementation ("com.google.android.material:material:1.1.0")
+    // Para pasar informacion de fragments a activities
+    implementation ("androidx.fragment:fragment-ktx:1.3.0")
+    // Para el tema
+    implementation ("androidx.appcompat:appcompat:1.3.0")
+    implementation ("com.google.android.material:material:1.4.0")
+
+
 }

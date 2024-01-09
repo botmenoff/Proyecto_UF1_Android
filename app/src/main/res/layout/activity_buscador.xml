@@ -19,8 +19,8 @@
         <LinearLayout
             android:layout_width="280dp"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:background="@drawable/border_ilnear_layout">
+            android:background="@drawable/border_ilnear_layout"
+            android:orientation="horizontal">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/searchInput"
@@ -42,6 +42,231 @@
 
     </com.google.android.material.textfield.TextInputLayout>
 
+    <!--PELIS-->
+    <ScrollView
+        android:id="@+id/scrollView2"
+        android:layout_width="374dp"
+        android:layout_height="659dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textInputLayout">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <!-- Sección Peliculas nuevas -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tvPeliculasRecientes"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="8dp"
+                    android:text="@string/tv_categoria_recientes"
+                    android:textSize="20sp" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rvPeliculasRecientes"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:clipChildren="false"
+                    android:clipToPadding="false"
+                    android:orientation="horizontal"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tvPeliculasRecientes" />
+
+            </LinearLayout>
+
+            <!-- Sección Acción -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tvPeliculasAccion"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="8dp"
+                    android:text="@string/tv_categoria_accion"
+                    android:textSize="20sp" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rvPeliculasAccion"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:clipChildren="false"
+                    android:clipToPadding="false"
+                    android:orientation="horizontal"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tvPeliculasAccion" />
+
+            </LinearLayout>
+
+            <!-- Sección Comedia -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tvPeliculasComedia"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="8dp"
+                    android:text="@string/tv_categoria_comedia"
+                    android:textSize="20sp" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rvPeliculasComedia"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:clipChildren="false"
+                    android:clipToPadding="false"
+                    android:orientation="horizontal"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tvPeliculasComedia" />
+
+            </LinearLayout>
+
+            <!-- Sección Drama -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tvPeliculasDrama"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="8dp"
+                    android:text="@string/tv_categoria_drama"
+                    android:textSize="20sp" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rvPeliculasDrama"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:clipChildren="false"
+                    android:clipToPadding="false"
+                    android:orientation="horizontal"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tvPeliculasDrama" />
+
+            </LinearLayout>
+
+            <!-- Sección Ciencia Ficcion -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tvPeliculasCienciaFiccion"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="8dp"
+                    android:text="@string/tv_categoria_cienciaficcion"
+                    android:textSize="20sp" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rvPeliculasCienciaFiccion"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:clipChildren="false"
+                    android:clipToPadding="false"
+                    android:orientation="horizontal"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tvPeliculasCienciaFiccion" />
+
+            </LinearLayout>
+
+            <!-- Sección Animación -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tvPeliculasAnimacion"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="8dp"
+                    android:text="@string/tv_categoria_animacion"
+                    android:textSize="20sp" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rvPeliculasAnimacion"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:clipChildren="false"
+                    android:clipToPadding="false"
+                    android:orientation="horizontal"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tvPeliculasAnimacion" />
+
+            </LinearLayout>
+
+            <!-- Sección Terror -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tvPeliculasTerror"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="8dp"
+                    android:text="@string/tv_categoria_terror"
+                    android:textSize="20sp" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rvPeliculasTerror"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:clipChildren="false"
+                    android:clipToPadding="false"
+                    android:orientation="horizontal"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tvPeliculasTerror" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+
+    <!-- MENU -->
     <ImageButton
         android:id="@+id/showFilters"
         android:layout_width="62dp"
