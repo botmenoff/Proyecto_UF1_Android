@@ -95,6 +95,23 @@ class PreferenciasView : AppCompatActivity() {
         }
 
         /**
+         * Desplegar o contraer el acordeon
+         */
+        val lySwEdadSeleccionadaOculto = binding.lySwEdadSeleccionadaOculto
+        val lyAcordeonEdadVisible = binding.lyAcordeonEdadVisible
+        val ivExpandRestriccionEdad = binding.ivExpandRestriccionEdad
+        lyAcordeonEdadVisible.setOnClickListener {
+
+            if (lySwEdadSeleccionadaOculto.visibility == View.VISIBLE) {
+                lySwEdadSeleccionadaOculto.visibility = View.GONE
+                ivExpandRestriccionEdad.setImageResource(R.drawable.expand_more_24)
+            } else {
+                lySwEdadSeleccionadaOculto.visibility = View.VISIBLE
+                ivExpandRestriccionEdad.setImageResource(R.drawable.expand_less_24)
+            }
+        }
+
+        /**
          * Evento que muestra el check del LY "Apto para todos los públicos"
          */
         lyTodosPublicos.setOnClickListener {
@@ -184,6 +201,22 @@ class PreferenciasView : AppCompatActivity() {
             }
         }
 
+        /**
+         * Desplegar o contraer el acordeon
+         */
+        val lySwCategoriasFavoritasOculto = binding.lySwCategoriasFavoritasOculto
+        val lyAcordeonCategoriasVisible = binding.lyAcordeonCategoriasVisible
+        val ivExpandCategoriasFavoritas = binding.ivExpandCategoriasFavoritas
+        lyAcordeonCategoriasVisible.setOnClickListener {
+            Log.i("--->", "entra")
+            if (lySwCategoriasFavoritasOculto.visibility == View.VISIBLE) {
+                lySwCategoriasFavoritasOculto.visibility = View.GONE
+                ivExpandCategoriasFavoritas.setImageResource(R.drawable.expand_more_24)
+            } else {
+                lySwCategoriasFavoritasOculto.visibility = View.VISIBLE
+                ivExpandCategoriasFavoritas.setImageResource(R.drawable.expand_less_24)
+            }
+        }
 
         /**
          * Evento que guarda o elimina la categoria ACCION de las preferencias del usuario
