@@ -30,7 +30,10 @@
             android:text="@string/tv_preferencias"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            />
 
         <!-- Inp Nombre Usuario -->
         <LinearLayout
@@ -51,7 +54,9 @@
                 android:layout_height="wrap_content"
                 android:paddingTop="8dp"
                 android:paddingBottom="8dp"
-                android:text="@string/tv_escribir_nombre" />
+                android:text="@string/tv_escribir_nombre"
+                android:textSize="17dp"
+                android:textStyle="bold"/>
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/inp_nombre"
@@ -89,7 +94,9 @@
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toEndOf="@+id/ivExpandCategoriasFavoritas"
                     app:layout_constraintTop_toTopOf="parent"
-                    tools:ignore="RtlCompat" />
+                    tools:ignore="RtlCompat"
+                    android:textSize="17dp"
+                    android:textStyle="bold"/>
 
                 <ImageView
                     android:id="@+id/ivExpandCategoriasFavoritas"
@@ -280,7 +287,9 @@
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toEndOf="@+id/ivExpandCategoriasFavoritas"
                     app:layout_constraintTop_toTopOf="parent"
-                    tools:ignore="RtlCompat" />
+                    tools:ignore="RtlCompat"
+                    android:textSize="17dp"
+                    android:textStyle="bold"/>
 
                 <ImageView
                     android:id="@+id/ivExpandRestriccionEdad"
