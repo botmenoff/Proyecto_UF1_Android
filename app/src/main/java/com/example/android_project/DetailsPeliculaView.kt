@@ -3,17 +3,34 @@ package com.example.android_project
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.view.MenuItem
 import android.view.View
+import android.widget.ImageButton
 import com.bumptech.glide.Glide
 import com.example.android_project.Models.Actores
 import com.example.android_project.databinding.ActivityDetailsPeliculaViewBinding
 
 class DetailsPeliculaView : AppCompatActivity() {
     private lateinit var binding: ActivityDetailsPeliculaViewBinding
+
+    // Para que que cuando le das a la flecha hacia atras no te vaya siempre a la MainActivity sino que vaya donde estabas previamente
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        when (item.itemId) {
+            android.R.id.home -> {
+                // This is the back arrow button in the action bar
+                onBackPressed()
+                return true
+            }
+        }
+        return super.onOptionsItemSelected(item)
+    }
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityDetailsPeliculaViewBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        // Activar el backArrow
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
         val tvTitulo = binding.tvNombrePeli
         val ivImagen = binding.ivImagenPeli

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- Base application theme -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Otros estilos si los tienes -->
+
+        <!-- Configuración de la flecha de retroceso en la barra de acción -->
+        <item name="android:homeAsUpIndicator">@drawable/sharp_keyboard_backspace_24</item>
+        <item name="homeAsUpIndicator">@drawable/sharp_keyboard_backspace_24</item>
+    </style>
+
+</resources>
