@@ -5,14 +5,14 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.example.android_project.Models.RestriccionEdad
-import com.example.android_project.databinding.FiltersBinding
+import com.example.android_project.databinding.FragmentFiltersBinding
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 import androidx.fragment.app.viewModels
 
 
 class FiltersFragment : BottomSheetDialogFragment() {
 
-    private lateinit var binding: FiltersBinding // Asegúrate de que el nombre del archivo de diseño coincide
+    private lateinit var binding: FragmentFiltersBinding // Asegúrate de que el nombre del archivo de diseño coincide
     private var edadSeleccionadaString: String? = null
     private var edadSeleccionada: RestriccionEdad = RestriccionEdad.TODO_PUBLICO
 
@@ -23,7 +23,7 @@ class FiltersFragment : BottomSheetDialogFragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Utiliza el método inflate del View Binding para inflar la vista
-        binding = FiltersBinding.inflate(inflater, container, false)
+        binding = FragmentFiltersBinding.inflate(inflater, container, false)
         return binding.root
     }
 
