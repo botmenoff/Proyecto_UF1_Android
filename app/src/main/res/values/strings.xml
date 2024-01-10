@@ -15,6 +15,7 @@
     <string name="tv_categoria_cienciaficcion">Ciencia Ficción</string>
     <string name="tv_categoria_animacion">Animación</string>
     <string name="tv_categoria_terror">Terror</string>
+    <string name="tv_categoria_estreno">Estreno</string>
     <string name="sw_preferencias">Activar preferencias</string>
 
     <!-- DetailsView -->
