@@ -25,7 +25,8 @@
             android:paddingTop="8dp"
             android:paddingBottom="8dp"
             android:text="@string/tv_categorias_favoritas"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            android:textSize="20dp"/>
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -182,13 +183,15 @@
             android:paddingTop="8dp"
             android:paddingBottom="8dp"
             android:text="@string/tv_seleccionar_edad"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            android:textSize="20dp"/>
 
         <LinearLayout
             android:id="@+id/ly_todos_publicos"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:layout_margin="5dp">
 
             <TextView
                 android:id="@+id/textView11"
@@ -211,7 +214,8 @@
             android:id="@+id/ly_mas_siete"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:layout_margin="5dp">
 
             <TextView
                 android:id="@+id/textView12"
@@ -235,7 +239,8 @@
             android:id="@+id/ly_mas_trece"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:layout_margin="5dp">
 
             <TextView
                 android:id="@+id/textView13"
@@ -259,7 +264,8 @@
             android:id="@+id/ly_mas_dieciocho"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:layout_margin="5dp">
 
             <TextView
                 android:id="@+id/textView14"
