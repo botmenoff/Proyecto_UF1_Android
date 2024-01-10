@@ -17,7 +17,9 @@
         android:layout_marginEnd="16dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        android:textSize="22dp"
+        android:textStyle="bold"/>
 
     <ImageView
         android:id="@+id/ivImagenPeli"
@@ -74,7 +76,9 @@
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintStart_toEndOf="@+id/ivExpandTitulo"
                         app:layout_constraintTop_toTopOf="parent"
-                        tools:ignore="RtlCompat" />
+                        tools:ignore="RtlCompat"
+                        android:textSize="17dp"
+                        android:textStyle="bold"/>
 
                     <ImageView
                         android:id="@+id/ivExpandTitulo"
@@ -92,12 +96,14 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:orientation="vertical"
+                    android:visibility="gone"
                     tools:visibility="gone">
 
                     <TextView
                         android:id="@+id/tvTituloPeliOculto"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content" />
+                        android:layout_height="wrap_content"
+                        android:textSize="17dp"/>
                 </LinearLayout>
 
             </LinearLayout>
@@ -129,7 +135,9 @@
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintStart_toEndOf="@+id/ivExpandReparto"
                         app:layout_constraintTop_toTopOf="parent"
-                        tools:ignore="RtlCompat" />
+                        tools:ignore="RtlCompat"
+                        android:textSize="17dp"
+                        android:textStyle="bold"/>
 
                     <ImageView
                         android:id="@+id/ivExpandReparto"
@@ -152,7 +160,8 @@
                     <TextView
                         android:id="@+id/tvRepartoPeliOculto"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content" />
+                        android:layout_height="wrap_content"
+                        android:textSize="17dp"/>
                 </LinearLayout>
 
             </LinearLayout>
@@ -184,7 +193,9 @@
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintStart_toEndOf="@+id/ivExpandCategoria"
                         app:layout_constraintTop_toTopOf="parent"
-                        tools:ignore="RtlCompat" />
+                        tools:ignore="RtlCompat"
+                        android:textSize="17dp"
+                        android:textStyle="bold"/>
 
                     <ImageView
                         android:id="@+id/ivExpandCategoria"
@@ -207,7 +218,8 @@
                     <TextView
                         android:id="@+id/tvCategoriaPeliOculto"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content" />
+                        android:layout_height="wrap_content"
+                        android:textSize="17dp"/>
                 </LinearLayout>
 
             </LinearLayout>
@@ -239,7 +251,9 @@
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintStart_toEndOf="@+id/ivExpandIdioma"
                         app:layout_constraintTop_toTopOf="parent"
-                        tools:ignore="RtlCompat" />
+                        tools:ignore="RtlCompat"
+                        android:textSize="17dp"
+                        android:textStyle="bold"/>
 
                     <ImageView
                         android:id="@+id/ivExpandIdioma"
@@ -262,7 +276,8 @@
                     <TextView
                         android:id="@+id/tvIdiomaPeliOculto"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content" />
+                        android:layout_height="wrap_content"
+                        android:textSize="17dp"/>
                 </LinearLayout>
 
             </LinearLayout>
@@ -294,7 +309,9 @@
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintStart_toEndOf="@+id/ivExpandEdad"
                         app:layout_constraintTop_toTopOf="parent"
-                        tools:ignore="RtlCompat" />
+                        tools:ignore="RtlCompat"
+                        android:textSize="17dp"
+                        android:textStyle="bold"/>
 
                     <ImageView
                         android:id="@+id/ivExpandEdad"
@@ -317,7 +334,8 @@
                     <TextView
                         android:id="@+id/tvEdadPeliOculto"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content" />
+                        android:layout_height="wrap_content"
+                        android:textSize="17dp"/>
                 </LinearLayout>
 
             </LinearLayout>
