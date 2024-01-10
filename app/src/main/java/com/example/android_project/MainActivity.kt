@@ -3,7 +3,10 @@ package com.example.android_project
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
+import android.view.View
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.android_project.Models.Categorias
 import com.example.android_project.Models.Peliculas
 import com.example.android_project.Models.PeliculasStore
 import com.example.android_project.databinding.ActivityMainBinding
@@ -68,6 +71,56 @@ class MainActivity : AppCompatActivity() {
         val nombreUsuario = extras?.getString("nombreUsuario").toString()
         val categoriasPreferidas = extras?.getString("categoriasPreferidas").toString()
         val edadSeleccionada = extras?.getString("edadSeleccionada").toString()
+
+        /**
+         * Evento que filtra las categorias elegidas por el usuario cuando se activa el switch
+         */
+        val lyAccion = binding.lyAccion
+        val lyComedia = binding.lyComedia
+        val lyDrama = binding.lyDrama
+        val lyCienciaFiccion = binding.lyCienciaFiccion
+        val lyAnimacion = binding.lyAnimacion
+        val lyTerror = binding.lyTerror
+        val tvNombreUsuario = binding.tvNombreUsuario
+        val swPreferencias = binding.swPreferencias
+        if (estaRegistrado == true) {
+            tvNombreUsuario.visibility = View.VISIBLE
+            tvNombreUsuario.text = "Binevenido $nombreUsuario"
+            swPreferencias.visibility = View.VISIBLE
+        }
+
+        val categoriasArray = categoriasPreferidas.split("\n,")
+        swPreferencias.setOnClickListener {
+            val categoriasNoPreferidas = Categorias.values()
+                .filterNot { categoriasArray.any { categoriaArray -> it.nombre.equals(categoriaArray.replace("\n", ""), ignoreCase = true) } }
+
+            // Ocultar o mostrar layouts según las categorías no preferidas
+            if (swPreferencias.isChecked) {
+                categoriasNoPreferidas.forEach { categoria ->
+                    when (categoria) {
+                        Categorias.ACCION -> lyAccion.visibility = View.GONE
+                        Categorias.COMEDIA -> lyComedia.visibility = View.GONE
+                        Categorias.DRAMA -> lyDrama.visibility = View.GONE
+                        Categorias.CIENCIA_FICCION -> lyCienciaFiccion.visibility = View.GONE
+                        Categorias.ANIMACION -> lyAnimacion.visibility = View.GONE
+                        Categorias.TERROR -> lyTerror.visibility = View.GONE
+                        else -> {}
+                    }
+                }
+            } else {
+                categoriasNoPreferidas.forEach { categoria ->
+                    when (categoria) {
+                        Categorias.ACCION -> lyAccion.visibility = View.VISIBLE
+                        Categorias.COMEDIA -> lyComedia.visibility = View.VISIBLE
+                        Categorias.DRAMA -> lyDrama.visibility = View.VISIBLE
+                        Categorias.CIENCIA_FICCION -> lyCienciaFiccion.visibility = View.VISIBLE
+                        Categorias.ANIMACION -> lyAnimacion.visibility = View.VISIBLE
+                        Categorias.TERROR -> lyTerror.visibility = View.VISIBLE
+                        else -> {}
+                    }
+                }
+            }
+        }
 
         /**
          * Pelis nuevas
@@ -143,8 +196,8 @@ class MainActivity : AppCompatActivity() {
         /**
          * MENU
          */
-        var lyPreferencias = binding.lyPreferencias
-        var lyBuscador = binding.lyBuscador
+        val lyPreferencias = binding.lyPreferencias
+        val lyBuscador = binding.lyBuscador
 
         lyPreferencias.setOnClickListener {
             val intent = Intent(this, PreferenciasView::class.java)

@@ -43,8 +43,7 @@ class ListPeliculasAdapter (val peliculas: MutableList<Peliculas>, val context: 
         peliculas.add(
             Peliculas(
                 "Peli 1", "Lorem Ipsum...",
-                "https://play-lh.googleusercontent.com/SU1hRumo0t-zFebkVVlesNb6a1mHYPxxQJX-49jYayrMIrsmU135uxgcOglMcCB_kHfb=w240-h480-rw",
-                true, mutableListOf(Idiomas.ESP, Idiomas.ITA), RestriccionEdad.TODO_PUBLICO, mutableListOf(Categorias.ACCION),
+                "https://play-lh.googleusercontent.com/SU1hRumo0t-zFebkVVlesNb6a1mHYPxxQJX-49jYayrMIrsmU135uxgcOglMcCB_kHfb=w240-h480-rw", mutableListOf(Idiomas.ESP, Idiomas.ITA), RestriccionEdad.TODO_PUBLICO, mutableListOf(Categorias.ESTRENO),
                 mutableListOf(Actores("Pablo", "Estudiante"), Actores("Ferran", "Estudiante"))))
     }
 
@@ -52,62 +51,54 @@ class ListPeliculasAdapter (val peliculas: MutableList<Peliculas>, val context: 
         peliculas.add(
             Peliculas(
                 "Peli 1", "Lorem Ipsum...",
-                "https://play-lh.googleusercontent.com/SU1hRumo0t-zFebkVVlesNb6a1mHYPxxQJX-49jYayrMIrsmU135uxgcOglMcCB_kHfb=w240-h480-rw",
-                true, mutableListOf(Idiomas.ESP, Idiomas.ITA), RestriccionEdad.TODO_PUBLICO, mutableListOf(Categorias.ACCION),
+                "https://play-lh.googleusercontent.com/SU1hRumo0t-zFebkVVlesNb6a1mHYPxxQJX-49jYayrMIrsmU135uxgcOglMcCB_kHfb=w240-h480-rw", mutableListOf(Idiomas.ESP, Idiomas.ITA), RestriccionEdad.TODO_PUBLICO, mutableListOf(Categorias.ACCION),
                 mutableListOf(Actores("Pablo", "Estudiante"), Actores("Ferran", "Estudiante"))))
 
         peliculas.add(
             Peliculas(
                 "Peli 1.2", "Lorem Ipsum...",
-                "https://play-lh.googleusercontent.com/SU1hRumo0t-zFebkVVlesNb6a1mHYPxxQJX-49jYayrMIrsmU135uxgcOglMcCB_kHfb=w240-h480-rw",
-                true, mutableListOf(Idiomas.ESP, Idiomas.ITA), RestriccionEdad.TODO_PUBLICO, mutableListOf(Categorias.ACCION),
+                "https://play-lh.googleusercontent.com/SU1hRumo0t-zFebkVVlesNb6a1mHYPxxQJX-49jYayrMIrsmU135uxgcOglMcCB_kHfb=w240-h480-rw", mutableListOf(Idiomas.ESP, Idiomas.ITA), RestriccionEdad.TODO_PUBLICO, mutableListOf(Categorias.ACCION),
                 mutableListOf(Actores("Pablo", "Estudiante"), Actores("Ferran", "Estudiante"))))
     }
     fun generarPelisDrama() {
         peliculas.add(
             Peliculas(
                 "Peli 2", "Lorem Ipsum...",
-                "https://play-lh.googleusercontent.com/SU1hRumo0t-zFebkVVlesNb6a1mHYPxxQJX-49jYayrMIrsmU135uxgcOglMcCB_kHfb=w240-h480-rw",
-                true, mutableListOf(Idiomas.ESP, Idiomas.ITA), RestriccionEdad.TODO_PUBLICO, mutableListOf(Categorias.DRAMA),
+                "https://play-lh.googleusercontent.com/SU1hRumo0t-zFebkVVlesNb6a1mHYPxxQJX-49jYayrMIrsmU135uxgcOglMcCB_kHfb=w240-h480-rw", mutableListOf(Idiomas.ESP, Idiomas.ITA), RestriccionEdad.TODO_PUBLICO, mutableListOf(Categorias.DRAMA),
                 mutableListOf(Actores("Pablo", "Estudiante"), Actores("Ferran", "Estudiante"))))
     }
     fun generarPelisComedia() {
         peliculas.add(
             Peliculas(
                 "Peli 3", "Lorem Ipsum...",
-                "https://play-lh.googleusercontent.com/SU1hRumo0t-zFebkVVlesNb6a1mHYPxxQJX-49jYayrMIrsmU135uxgcOglMcCB_kHfb=w240-h480-rw",
-                true, mutableListOf(Idiomas.ESP, Idiomas.ITA), RestriccionEdad.TODO_PUBLICO, mutableListOf(Categorias.COMEDIA),
+                "https://play-lh.googleusercontent.com/SU1hRumo0t-zFebkVVlesNb6a1mHYPxxQJX-49jYayrMIrsmU135uxgcOglMcCB_kHfb=w240-h480-rw", mutableListOf(Idiomas.ESP, Idiomas.ITA), RestriccionEdad.TODO_PUBLICO, mutableListOf(Categorias.COMEDIA),
                 mutableListOf(Actores("Pablo", "Estudiante"), Actores("Ferran", "Estudiante"))))
 
         peliculas.add(
             Peliculas(
                 "Peli 3.3", "Lorem Ipsum...",
-                "https://play-lh.googleusercontent.com/SU1hRumo0t-zFebkVVlesNb6a1mHYPxxQJX-49jYayrMIrsmU135uxgcOglMcCB_kHfb=w240-h480-rw",
-                true, mutableListOf(Idiomas.ESP, Idiomas.ITA), RestriccionEdad.TODO_PUBLICO, mutableListOf(Categorias.COMEDIA),
+                "https://play-lh.googleusercontent.com/SU1hRumo0t-zFebkVVlesNb6a1mHYPxxQJX-49jYayrMIrsmU135uxgcOglMcCB_kHfb=w240-h480-rw", mutableListOf(Idiomas.ESP, Idiomas.ITA), RestriccionEdad.TODO_PUBLICO, mutableListOf(Categorias.COMEDIA),
                 mutableListOf(Actores("Pablo", "Estudiante"), Actores("Ferran", "Estudiante"))))
     }
     fun generarPelisCienciaFiccion() {
         peliculas.add(
             Peliculas(
                 "Peli 4", "Lorem Ipsum...",
-                "https://play-lh.googleusercontent.com/SU1hRumo0t-zFebkVVlesNb6a1mHYPxxQJX-49jYayrMIrsmU135uxgcOglMcCB_kHfb=w240-h480-rw",
-                true, mutableListOf(Idiomas.ESP, Idiomas.ITA), RestriccionEdad.TODO_PUBLICO, mutableListOf(Categorias.CIENCIA_FICCION),
+                "https://play-lh.googleusercontent.com/SU1hRumo0t-zFebkVVlesNb6a1mHYPxxQJX-49jYayrMIrsmU135uxgcOglMcCB_kHfb=w240-h480-rw", mutableListOf(Idiomas.ESP, Idiomas.ITA), RestriccionEdad.TODO_PUBLICO, mutableListOf(Categorias.CIENCIA_FICCION),
                 mutableListOf(Actores("Pablo", "Estudiante"), Actores("Ferran", "Estudiante"))))
     }
     fun generarPelisAnimacion() {
         peliculas.add(
             Peliculas(
                 "Peli 5", "Lorem Ipsum...",
-                "https://play-lh.googleusercontent.com/SU1hRumo0t-zFebkVVlesNb6a1mHYPxxQJX-49jYayrMIrsmU135uxgcOglMcCB_kHfb=w240-h480-rw",
-                true, mutableListOf(Idiomas.ESP, Idiomas.ITA), RestriccionEdad.TODO_PUBLICO, mutableListOf(Categorias.ANIMACION),
+                "https://play-lh.googleusercontent.com/SU1hRumo0t-zFebkVVlesNb6a1mHYPxxQJX-49jYayrMIrsmU135uxgcOglMcCB_kHfb=w240-h480-rw", mutableListOf(Idiomas.ESP, Idiomas.ITA), RestriccionEdad.TODO_PUBLICO, mutableListOf(Categorias.ANIMACION),
                 mutableListOf(Actores("Pablo", "Estudiante"), Actores("Ferran", "Estudiante"))))
     }
     fun generarPelisTerror() {
         peliculas.add(
             Peliculas(
                 "Peli 6", "Lorem Ipsum...",
-                "https://play-lh.googleusercontent.com/SU1hRumo0t-zFebkVVlesNb6a1mHYPxxQJX-49jYayrMIrsmU135uxgcOglMcCB_kHfb=w240-h480-rw",
-                true, mutableListOf(Idiomas.ESP, Idiomas.ITA), RestriccionEdad.TODO_PUBLICO, mutableListOf(Categorias.TERROR),
+                "https://play-lh.googleusercontent.com/SU1hRumo0t-zFebkVVlesNb6a1mHYPxxQJX-49jYayrMIrsmU135uxgcOglMcCB_kHfb=w240-h480-rw", mutableListOf(Idiomas.ESP, Idiomas.ITA), RestriccionEdad.TODO_PUBLICO, mutableListOf(Categorias.TERROR),
                 mutableListOf(Actores("Pablo", "Estudiante"), Actores("Ferran", "Estudiante"))))
     }
 
