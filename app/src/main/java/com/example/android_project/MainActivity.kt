@@ -75,6 +75,7 @@ class MainActivity : AppCompatActivity() {
         /**
          * Evento que filtra las categorias elegidas por el usuario cuando se activa el switch
          */
+        val lyRecientes = binding.lyRecientes
         val lyAccion = binding.lyAccion
         val lyComedia = binding.lyComedia
         val lyDrama = binding.lyDrama
@@ -98,6 +99,7 @@ class MainActivity : AppCompatActivity() {
             if (swPreferencias.isChecked) {
                 categoriasNoPreferidas.forEach { categoria ->
                     when (categoria) {
+                        Categorias.ESTRENO -> lyRecientes.visibility = View.GONE
                         Categorias.ACCION -> lyAccion.visibility = View.GONE
                         Categorias.COMEDIA -> lyComedia.visibility = View.GONE
                         Categorias.DRAMA -> lyDrama.visibility = View.GONE
@@ -110,6 +112,7 @@ class MainActivity : AppCompatActivity() {
             } else {
                 categoriasNoPreferidas.forEach { categoria ->
                     when (categoria) {
+                        Categorias.ESTRENO -> lyRecientes.visibility = View.VISIBLE
                         Categorias.ACCION -> lyAccion.visibility = View.VISIBLE
                         Categorias.COMEDIA -> lyComedia.visibility = View.VISIBLE
                         Categorias.DRAMA -> lyDrama.visibility = View.VISIBLE

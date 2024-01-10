@@ -175,6 +175,7 @@ class PreferenciasView : AppCompatActivity() {
          * CATEGORIAS ELEGIDAS
          */
 
+        val swEstreno = binding.swEstreno
         val swAccion = binding.swAccion
         val swComedia = binding.swComedia
         val swDrama = binding.swDrama
@@ -191,6 +192,7 @@ class PreferenciasView : AppCompatActivity() {
             .toMutableList()
         categoriasPreferidas.forEach { categoria ->
             when (categoria) {
+                Categorias.ESTRENO -> swEstreno.isChecked = true
                 Categorias.ACCION -> swAccion.isChecked = true
                 Categorias.COMEDIA -> swComedia.isChecked = true
                 Categorias.DRAMA -> swDrama.isChecked = true
