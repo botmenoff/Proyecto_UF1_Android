@@ -38,7 +38,7 @@ class PreferenciasView : AppCompatActivity() {
         /**
          * NOMBRE DEL USUARIO
          */
-        var inpNombre = binding.inpNombre
+        val inpNombre = binding.inpNombre
         if (estaRegistrado == true) {
             inpNombre.setText(nombreUsuario)
         }
@@ -46,15 +46,15 @@ class PreferenciasView : AppCompatActivity() {
         /**
          * RESTRICCION DE EDAD SELECCIONADA
          */
-        var ivCheckTodosPublicos = binding.ivCheckTodosPublicos
-        var ivCheckSiete = binding.ivCheckSiete
-        var ivCheckTrece = binding.ivCheckTrece
-        var ivCheckDieciocho = binding.ivCheckDieciocho
+        val ivCheckTodosPublicos = binding.ivCheckTodosPublicos
+        val ivCheckSiete = binding.ivCheckSiete
+        val ivCheckTrece = binding.ivCheckTrece
+        val ivCheckDieciocho = binding.ivCheckDieciocho
 
-        var lyTodosPublicos = binding.lyTodosPublicos
-        var lyMasSiete = binding.lyMasSiete
-        var lyMasTrece = binding.lyMasTrece
-        var lyMasDieciocho = binding.lyMasDieciocho
+        val lyTodosPublicos = binding.lyTodosPublicos
+        val lyMasSiete = binding.lyMasSiete
+        val lyMasTrece = binding.lyMasTrece
+        val lyMasDieciocho = binding.lyMasDieciocho
 
         /**
          * Estas variables nos permitiran saber cual es el layout que ha elegido el usuario
@@ -90,8 +90,24 @@ class PreferenciasView : AppCompatActivity() {
                     ivCheckTodosPublicos.visibility = View.INVISIBLE
                     ivCheckDieciocho.visibility = View.VISIBLE
                 }
-
                 else -> {} // En el caso de que sea TODO_PUBLICO, no hacemos nada
+            }
+        }
+
+        /**
+         * Desplegar o contraer el acordeon
+         */
+        val lySwEdadSeleccionadaOculto = binding.lySwEdadSeleccionadaOculto
+        val lyAcordeonEdadVisible = binding.lyAcordeonEdadVisible
+        val ivExpandRestriccionEdad = binding.ivExpandRestriccionEdad
+        lyAcordeonEdadVisible.setOnClickListener {
+
+            if (lySwEdadSeleccionadaOculto.visibility == View.VISIBLE) {
+                lySwEdadSeleccionadaOculto.visibility = View.GONE
+                ivExpandRestriccionEdad.setImageResource(R.drawable.expand_more_24)
+            } else {
+                lySwEdadSeleccionadaOculto.visibility = View.VISIBLE
+                ivExpandRestriccionEdad.setImageResource(R.drawable.expand_less_24)
             }
         }
 
@@ -169,24 +185,36 @@ class PreferenciasView : AppCompatActivity() {
         /**
          * Guardamos en nuestro array de categorias preferidas las categorias que teniamos anteriormente
          */
-        var categoriasArray = categoriasPreferidasString.split("\n,")
-        for (categoriaArray in categoriasArray) {
-            val categoria = categoriaArray.replace("\n", "") // esta comprobación la hacemos pq el último carácter de "categoriasArray" siempre tendra un \n y por este motivo no entrara en el find()
-            val c = Categorias.values().find { it.nombre.equals(categoria, ignoreCase = true) }
-            if (c != null) {
-                categoriasPreferidas.add(c)
+        val categoriasArray = categoriasPreferidasString.split("\n,")
+        categoriasPreferidas = Categorias.values()
+            .filter { categoriasArray.any { categoriaArray -> it.nombre.equals(categoriaArray.replace("\n", ""), ignoreCase = true) } }
+            .toMutableList()
+        categoriasPreferidas.forEach { categoria ->
+            when (categoria) {
+                Categorias.ACCION -> swAccion.isChecked = true
+                Categorias.COMEDIA -> swComedia.isChecked = true
+                Categorias.DRAMA -> swDrama.isChecked = true
+                Categorias.CIENCIA_FICCION -> swCienciaFiccion.isChecked = true
+                Categorias.ANIMACION -> swAnimacion.isChecked = true
+                Categorias.TERROR -> swTerror.isChecked = true
+                else -> {}
+            }
+        }
 
-                /**
-                 * Activamos el estado del switch a activo
-                 */
-                when (c) {
-                    Categorias.ACCION -> swAccion.isChecked = true
-                    Categorias.COMEDIA -> swComedia.isChecked = true
-                    Categorias.DRAMA -> swDrama.isChecked = true
-                    Categorias.CIENCIA_FICCION -> swCienciaFiccion.isChecked = true
-                    Categorias.ANIMACION -> swAnimacion.isChecked = true
-                    Categorias.TERROR -> swTerror.isChecked = true
-                }
+        /**
+         * Desplegar o contraer el acordeon
+         */
+        val lySwCategoriasFavoritasOculto = binding.lySwCategoriasFavoritasOculto
+        val lyAcordeonCategoriasVisible = binding.lyAcordeonCategoriasVisible
+        val ivExpandCategoriasFavoritas = binding.ivExpandCategoriasFavoritas
+        lyAcordeonCategoriasVisible.setOnClickListener {
+            Log.i("--->", "entra")
+            if (lySwCategoriasFavoritasOculto.visibility == View.VISIBLE) {
+                lySwCategoriasFavoritasOculto.visibility = View.GONE
+                ivExpandCategoriasFavoritas.setImageResource(R.drawable.expand_more_24)
+            } else {
+                lySwCategoriasFavoritasOculto.visibility = View.VISIBLE
+                ivExpandCategoriasFavoritas.setImageResource(R.drawable.expand_less_24)
             }
         }
 
@@ -256,7 +284,7 @@ class PreferenciasView : AppCompatActivity() {
             }
         }
 
-        var btnGuardar = binding.btnGuardar
+        val btnGuardar = binding.btnGuardar
 
         /**
          * Evento que comprueba que el usuario ha guardado bien sus preferencias y registra al usuario
@@ -267,14 +295,14 @@ class PreferenciasView : AppCompatActivity() {
                 Toast.makeText(this, "Preferencias guardadas exitosamente", Toast.LENGTH_SHORT).show()
             } else {
                 usuarioRegistrado = false
-                Toast.makeText(this, "Has de escribir tu nombre y seleccionar almenos 1 categoria.\nRevisa tus preferencias", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, "Has de escribir tu nombre y seleccionar almenos 1 categoria", Toast.LENGTH_SHORT).show()
             }
         }
 
         /**
          * Evento MENU
          */
-        var lyHome = binding.lyHome
+        val lyHome = binding.lyHome
         lyHome.setOnClickListener {
             val intent = Intent(this, MainActivity::class.java)
             if (usuarioRegistrado) {
@@ -292,7 +320,7 @@ class PreferenciasView : AppCompatActivity() {
             startActivity(intent)
         }
 
-        var lyBuscador = binding.lyBuscador
+        val lyBuscador = binding.lyBuscador
         lyBuscador.setOnClickListener {
             val intent = Intent(this, BuscadorView::class.java)
             if (usuarioRegistrado) {

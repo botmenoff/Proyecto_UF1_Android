@@ -1,6 +1,7 @@
 package com.example.android_project.Models
 
 enum class Categorias(val nombre: String) {
+    ESTRENO("Estreno"),
     ACCION("Acción"),
     COMEDIA("Comedia"),
     DRAMA("Drama"),
