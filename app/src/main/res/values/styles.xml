@@ -3,11 +3,14 @@
 
     <!-- Base application theme -->
     <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
-        <!-- Otros estilos si los tienes -->
+        <!-- Customize your theme here. -->
+        <!-- ... -->
+    </style>
 
-        <!-- Configuración de la flecha de retroceso en la barra de acción -->
-        <item name="android:homeAsUpIndicator">@drawable/sharp_keyboard_backspace_24</item>
-        <item name="homeAsUpIndicator">@drawable/sharp_keyboard_backspace_24</item>
+    <!-- Agrega un nuevo estilo para tu actividad -->
+    <style name="AppTheme.Details" parent="AppTheme">
+        <!-- Cambia el color de la barra de estado (status bar) aquí -->
+        <item name="android:statusBarColor">@color/tu_color_personalizado</item>
     </style>
 
 </resources>
