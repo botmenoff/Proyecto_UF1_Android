@@ -98,6 +98,7 @@ class PreferenciasView : AppCompatActivity() {
          * Desplegar o contraer el acordeon
          */
         val lySwEdadSeleccionadaOculto = binding.lySwEdadSeleccionadaOculto
+        lySwEdadSeleccionadaOculto.visibility = View.GONE
         val lyAcordeonEdadVisible = binding.lyAcordeonEdadVisible
         val ivExpandRestriccionEdad = binding.ivExpandRestriccionEdad
         lyAcordeonEdadVisible.setOnClickListener {
@@ -207,6 +208,7 @@ class PreferenciasView : AppCompatActivity() {
          * Desplegar o contraer el acordeon
          */
         val lySwCategoriasFavoritasOculto = binding.lySwCategoriasFavoritasOculto
+        lySwCategoriasFavoritasOculto.visibility = View.GONE
         val lyAcordeonCategoriasVisible = binding.lyAcordeonCategoriasVisible
         val ivExpandCategoriasFavoritas = binding.ivExpandCategoriasFavoritas
         lyAcordeonCategoriasVisible.setOnClickListener {
@@ -217,6 +219,17 @@ class PreferenciasView : AppCompatActivity() {
             } else {
                 lySwCategoriasFavoritasOculto.visibility = View.VISIBLE
                 ivExpandCategoriasFavoritas.setImageResource(R.drawable.expand_less_24)
+            }
+        }
+
+        /**
+         * Evento que guarda o elimina la categoria ESTRENO de las preferencias del usuario
+         */
+        swEstreno.setOnClickListener {
+            if (swEstreno.isChecked) {
+                categoriasPreferidas.add(Categorias.ESTRENO)
+            } else {
+                categoriasPreferidas.remove(Categorias.ESTRENO)
             }
         }
 

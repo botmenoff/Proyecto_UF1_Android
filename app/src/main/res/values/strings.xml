@@ -2,6 +2,7 @@
     <string name="app_name">Android_Project</string>
     <string name="tv_categoria_recientes">Peliculas Recientes</string>
     <string name="tv_titulo_peli">Título de la película</string>
+    <string name="tv_resumen_peli">Resumen de la película</string>
     <string name="tv_reparto_peli">Reparto de la película</string>
     <string name="tv_categorias_peli">Categorias de la película</string>
     <string name="tv_idiomas_peli">Idiomas de la película</string>
