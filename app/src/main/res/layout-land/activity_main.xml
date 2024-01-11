@@ -126,7 +126,7 @@
 
                 <TextView
                     android:id="@+id/tvPeliculasComedia"
-                    android:layout_width="wrap_content"
+                    android:layout_width="188dp"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
                     android:layout_marginBottom="8dp"
@@ -307,12 +307,7 @@
                     android:layout_height="36dp"
                     android:src="@drawable/home_24" />
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/tv_icon_home"
-                    android:textSize="17dp"
-                    />
+
             </LinearLayout>
 
             <!-- Icono Buscador -->
@@ -329,12 +324,7 @@
                     android:layout_height="36dp"
                     android:src="@drawable/search_24" />
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/tv_icon_buscador"
-                    android:textSize="17dp"
-                    />
+
             </LinearLayout>
 
             <!-- Icono Preferencias -->
@@ -351,12 +341,7 @@
                     android:layout_height="36dp"
                     android:src="@drawable/preferencias_24" />
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/tv_icon_preferencias"
-                    android:textSize="17dp"
-                    />
+
             </LinearLayout>
 
         </LinearLayout>

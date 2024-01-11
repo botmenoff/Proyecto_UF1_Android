@@ -41,64 +41,160 @@ class ListPeliculasAdapter (val peliculas: MutableList<Peliculas>, val context: 
     fun generarPelisRecientes() {
         peliculas.add(
             Peliculas(
-                "Peli 1", "Lorem Ipsum...",
-                "https://play-lh.googleusercontent.com/SU1hRumo0t-zFebkVVlesNb6a1mHYPxxQJX-49jYayrMIrsmU135uxgcOglMcCB_kHfb=w240-h480-rw", mutableListOf(Idiomas.ESP, Idiomas.ITA), RestriccionEdad.TODO_PUBLICO, mutableListOf(Categorias.ESTRENO),
-                mutableListOf(Actores("Pablo", "Estudiante"), Actores("Ferran", "Estudiante"))))
+                "Inception",
+                "A thief who steals corporate secrets through the use of dream-sharing technology is given the inverse task of planting an idea into the mind of a C.E.O.",
+                "https://play-lh.googleusercontent.com/SU1hRumo0t-zFebkVVlesNb6a1mHYPxxQJX-49jYayrMIrsmU135uxgcOglMcCB_kHfb=w240-h480-rw",
+                mutableListOf(Idiomas.ESP, Idiomas.ITA),
+                RestriccionEdad.MAYORES_DE_7,
+                mutableListOf(Categorias.ESTRENO),
+                mutableListOf(
+                    Actores("Leonardo DiCaprio", "Actor"),
+                    Actores("Joseph Gordon-Levitt", "Actor")
+                )
+            )
+        )
     }
 
     fun generarPelisAccion() {
         peliculas.add(
             Peliculas(
-                "Peli 1", "Lorem Ipsum...",
-                "https://play-lh.googleusercontent.com/SU1hRumo0t-zFebkVVlesNb6a1mHYPxxQJX-49jYayrMIrsmU135uxgcOglMcCB_kHfb=w240-h480-rw", mutableListOf(Idiomas.ESP, Idiomas.ITA), RestriccionEdad.TODO_PUBLICO, mutableListOf(Categorias.ACCION),
-                mutableListOf(Actores("Pablo", "Estudiante"), Actores("Ferran", "Estudiante"))))
+                "Die Hard",
+                "An NYPD officer tries to save his wife and several others taken hostage by German terrorists during a Christmas party at the Nakatomi Plaza in Los Angeles.",
+                "https://play-lh.googleusercontent.com/SU1hRumo0t-zFebkVVlesNb6a1mHYPxxQJX-49jYayrMIrsmU135uxgcOglMcCB_kHfb=w240-h480-rw",
+                mutableListOf(Idiomas.ESP, Idiomas.ITA),
+                RestriccionEdad.MAYORES_DE_18,
+                mutableListOf(Categorias.ACCION),
+                mutableListOf(
+                    Actores("Bruce Willis", "Actor"),
+                    Actores("Alan Rickman", "Actor")
+                )
+            )
+        )
 
         peliculas.add(
             Peliculas(
-                "Peli 1.2", "Lorem Ipsum...",
-                "https://play-lh.googleusercontent.com/SU1hRumo0t-zFebkVVlesNb6a1mHYPxxQJX-49jYayrMIrsmU135uxgcOglMcCB_kHfb=w240-h480-rw", mutableListOf(Idiomas.ESP, Idiomas.ITA), RestriccionEdad.TODO_PUBLICO, mutableListOf(Categorias.ACCION),
-                mutableListOf(Actores("Pablo", "Estudiante"), Actores("Ferran", "Estudiante"))))
+                "Mad Max: Fury Road",
+                "In a post-apocalyptic wasteland, a woman rebels against a tyrannical ruler in search of her homeland with the help of a group of female prisoners, a psychotic worshiper, and a drifter named Max.",
+                "https://play-lh.googleusercontent.com/SU1hRumo0t-zFebkVVlesNb6a1mHYPxxQJX-49jYayrMIrsmU135uxgcOglMcCB_kHfb=w240-h480-rw",
+                mutableListOf(Idiomas.ESP, Idiomas.ITA),
+                RestriccionEdad.MAYORES_DE_13,
+                mutableListOf(Categorias.ACCION),
+                mutableListOf(
+                    Actores("Tom Hardy", "Actor"),
+                    Actores("Charlize Theron", "Actress")
+                )
+            )
+        )
     }
     fun generarPelisDrama() {
         peliculas.add(
             Peliculas(
-                "Peli 2", "Lorem Ipsum...",
-                "https://play-lh.googleusercontent.com/SU1hRumo0t-zFebkVVlesNb6a1mHYPxxQJX-49jYayrMIrsmU135uxgcOglMcCB_kHfb=w240-h480-rw", mutableListOf(Idiomas.ESP, Idiomas.ITA), RestriccionEdad.TODO_PUBLICO, mutableListOf(Categorias.DRAMA),
-                mutableListOf(Actores("Pablo", "Estudiante"), Actores("Ferran", "Estudiante"))))
+                "Peli Drama 1",
+                "Una historia emocionalmente impactante sobre...",
+                "https://play-lh.googleusercontent.com/SU1hRumo0t-zFebkVVlesNb6a1mHYPxxQJX-49jYayrMIrsmU135uxgcOglMcCB_kHfb=w240-h480-rw",
+                mutableListOf(Idiomas.ESP, Idiomas.ITA),
+                RestriccionEdad.MAYORES_DE_13,
+                mutableListOf(Categorias.DRAMA),
+                mutableListOf(
+                    Actores("Actor1", "Principal"),
+                    Actores("Actriz2", "Principal")
+                )
+            )
+        )
     }
     fun generarPelisComedia() {
         peliculas.add(
             Peliculas(
-                "Peli 3", "Lorem Ipsum...",
-                "https://play-lh.googleusercontent.com/SU1hRumo0t-zFebkVVlesNb6a1mHYPxxQJX-49jYayrMIrsmU135uxgcOglMcCB_kHfb=w240-h480-rw", mutableListOf(Idiomas.ESP, Idiomas.ITA), RestriccionEdad.TODO_PUBLICO, mutableListOf(Categorias.COMEDIA),
-                mutableListOf(Actores("Pablo", "Estudiante"), Actores("Ferran", "Estudiante"))))
+                "Peli Comedia 1",
+                "Una comedia hilarante que sigue las desventuras de...",
+                "https://play-lh.googleusercontent.com/SU1hRumo0t-zFebkVVlesNb6a1mHYPxxQJX-49jYayrMIrsmU135uxgcOglMcCB_kHfb=w240-h480-rw",
+                mutableListOf(Idiomas.ESP, Idiomas.ITA),
+                RestriccionEdad.MAYORES_DE_18,
+                mutableListOf(Categorias.COMEDIA),
+                mutableListOf(
+                    Actores("Actriz3", "Principal"),
+                    Actores("Actor4", "Principal")
+                )
+            )
+        )
 
         peliculas.add(
             Peliculas(
-                "Peli 3.3", "Lorem Ipsum...",
-                "https://play-lh.googleusercontent.com/SU1hRumo0t-zFebkVVlesNb6a1mHYPxxQJX-49jYayrMIrsmU135uxgcOglMcCB_kHfb=w240-h480-rw", mutableListOf(Idiomas.ESP, Idiomas.ITA), RestriccionEdad.TODO_PUBLICO, mutableListOf(Categorias.COMEDIA),
-                mutableListOf(Actores("Pablo", "Estudiante"), Actores("Ferran", "Estudiante"))))
+                "Peli Comedia 2",
+                "Una divertida comedia romántica que sigue a...",
+                "https://play-lh.googleusercontent.com/SU1hRumo0t-zFebkVVlesNb6a1mHYPxxQJX-49jYayrMIrsmU135uxgcOglMcCB_kHfb=w240-h480-rw",
+                mutableListOf(Idiomas.ESP, Idiomas.ITA),
+                RestriccionEdad.MAYORES_DE_13,
+                mutableListOf(Categorias.COMEDIA),
+                mutableListOf(
+                    Actores("Actor5", "Principal"),
+                    Actores("Actriz6", "Principal")
+                )
+            )
+        )
     }
     fun generarPelisCienciaFiccion() {
         peliculas.add(
             Peliculas(
-                "Peli 4", "Lorem Ipsum...",
-                "https://play-lh.googleusercontent.com/SU1hRumo0t-zFebkVVlesNb6a1mHYPxxQJX-49jYayrMIrsmU135uxgcOglMcCB_kHfb=w240-h480-rw", mutableListOf(Idiomas.ESP, Idiomas.ITA), RestriccionEdad.TODO_PUBLICO, mutableListOf(Categorias.CIENCIA_FICCION),
-                mutableListOf(Actores("Pablo", "Estudiante"), Actores("Ferran", "Estudiante"))))
+                "Peli Ciencia Ficción 1",
+                "Una emocionante aventura de ciencia ficción que se desarrolla en...",
+                "https://play-lh.googleusercontent.com/SU1hRumo0t-zFebkVVlesNb6a1mHYPxxQJX-49jYayrMIrsmU135uxgcOglMcCB_kHfb=w240-h480-rw",
+                mutableListOf(Idiomas.ESP, Idiomas.ITA),
+                RestriccionEdad.MAYORES_DE_13,
+                mutableListOf(Categorias.CIENCIA_FICCION),
+                mutableListOf(
+                    Actores("Actor7", "Principal"),
+                    Actores("Actriz8", "Principal")
+                )
+            )
+        )
     }
     fun generarPelisAnimacion() {
         peliculas.add(
             Peliculas(
-                "Peli 5", "Lorem Ipsum...",
-                "https://play-lh.googleusercontent.com/SU1hRumo0t-zFebkVVlesNb6a1mHYPxxQJX-49jYayrMIrsmU135uxgcOglMcCB_kHfb=w240-h480-rw", mutableListOf(Idiomas.ESP, Idiomas.ITA), RestriccionEdad.TODO_PUBLICO, mutableListOf(Categorias.ANIMACION),
-                mutableListOf(Actores("Pablo", "Estudiante"), Actores("Ferran", "Estudiante"))))
+                "Peli Animación 1",
+                "Una encantadora película animada que sigue las peripecias de...",
+                "https://play-lh.googleusercontent.com/SU1hRumo0t-zFebkVVlesNb6a1mHYPxxQJX-49jYayrMIrsmU135uxgcOglMcCB_kHfb=w240-h480-rw",
+                mutableListOf(Idiomas.ESP, Idiomas.ITA),
+                RestriccionEdad.TODO_PUBLICO,
+                mutableListOf(Categorias.ANIMACION),
+                mutableListOf(
+                    Actores("Personaje Animado1", "Principal"),
+                    Actores("Personaje Animado2", "Principal")
+                )
+            )
+        )
     }
     fun generarPelisTerror() {
         peliculas.add(
             Peliculas(
-                "Peli 6", "Lorem Ipsum...",
-                "https://play-lh.googleusercontent.com/SU1hRumo0t-zFebkVVlesNb6a1mHYPxxQJX-49jYayrMIrsmU135uxgcOglMcCB_kHfb=w240-h480-rw", mutableListOf(Idiomas.ESP, Idiomas.ITA), RestriccionEdad.TODO_PUBLICO, mutableListOf(Categorias.TERROR),
-                mutableListOf(Actores("Pablo", "Estudiante"), Actores("Ferran", "Estudiante"))))
+                "Peli Terror 1",
+                "Un thriller de terror psicológico que sigue a...",
+                "https://play-lh.googleusercontent.com/SU1hRumo0t-zFebkVVlesNb6a1mHYPxxQJX-49jYayrMIrsmU135uxgcOglMcCB_kHfb=w240-h480-rw",
+                mutableListOf(Idiomas.ESP, Idiomas.ITA),
+                RestriccionEdad.MAYORES_DE_18,
+                mutableListOf(Categorias.TERROR),
+                mutableListOf(
+                    Actores("Actor9", "Principal"),
+                    Actores("Actriz10", "Principal")
+                )
+            )
+        )
+
+        peliculas.add(
+            Peliculas(
+                "Peli Terror 2",
+                "Una historia aterradora que sigue los eventos paranormales en...",
+                "https://play-lh.googleusercontent.com/SU1hRumo0t-zFebkVVlesNb6a1mHYPxxQJX-49jYayrMIrsmU135uxgcOglMcCB_kHfb=w240-h480-rw",
+                mutableListOf(Idiomas.ESP, Idiomas.ITA),
+                RestriccionEdad.MAYORES_DE_13,
+                mutableListOf(Categorias.TERROR),
+                mutableListOf(
+                    Actores("Actriz11", "Principal"),
+                    Actores("Actor12", "Principal")
+                )
+            )
+        )
     }
 
     /**
