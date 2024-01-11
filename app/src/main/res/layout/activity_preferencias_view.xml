@@ -136,7 +136,8 @@
                             android:paddingTop="8dp"
                             android:paddingBottom="8dp"
                             android:text="@string/tv_categoria_estreno"
-                            android:textSize="17dp" />
+                            android:textSize="17dp"
+                            android:paddingStart="16dp"/>
 
                         <Switch
                             android:id="@+id/swEstreno"
@@ -144,7 +145,8 @@
                             android:layout_height="wrap_content"
                             android:checked="false"
                             android:minWidth="48dp"
-                            android:minHeight="48dp" />
+                            android:minHeight="48dp"
+                            android:paddingEnd="16dp"/>
                     </LinearLayout>
                     <!-- SW ACCION -->
                     <LinearLayout
@@ -160,7 +162,8 @@
                             android:paddingTop="8dp"
                             android:paddingBottom="8dp"
                             android:text="@string/tv_categoria_accion"
-                            android:textSize="17dp" />
+                            android:textSize="17dp"
+                            android:paddingStart="16dp"/>
 
                         <Switch
                             android:id="@+id/swAccion"
@@ -168,7 +171,8 @@
                             android:layout_height="wrap_content"
                             android:checked="false"
                             android:minWidth="48dp"
-                            android:minHeight="48dp" />
+                            android:minHeight="48dp"
+                            android:paddingEnd="16dp"/>
                     </LinearLayout>
                     <!-- SW COMEDIA -->
                     <LinearLayout
@@ -184,14 +188,16 @@
                             android:paddingTop="8dp"
                             android:paddingBottom="8dp"
                             android:text="@string/tv_categoria_comedia"
-                            android:textSize="17dp" />
+                            android:textSize="17dp"
+                            android:paddingStart="16dp"/>
 
                         <Switch
                             android:id="@+id/swComedia"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:minWidth="48dp"
-                            android:minHeight="48dp" />
+                            android:minHeight="48dp"
+                            android:paddingEnd="16dp"/>
                     </LinearLayout>
                     <!-- SW DRAMA -->
                     <LinearLayout
@@ -207,14 +213,16 @@
                             android:paddingTop="8dp"
                             android:paddingBottom="8dp"
                             android:text="@string/tv_categoria_drama"
-                            android:textSize="17dp" />
+                            android:textSize="17dp"
+                            android:paddingStart="16dp"/>
 
                         <Switch
                             android:id="@+id/swDrama"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:minWidth="48dp"
-                            android:minHeight="48dp" />
+                            android:minHeight="48dp"
+                            android:paddingEnd="16dp"/>
                     </LinearLayout>
                     <!-- SW CIENCIA FICCION -->
                     <LinearLayout
@@ -230,14 +238,16 @@
                             android:paddingTop="8dp"
                             android:paddingBottom="8dp"
                             android:text="@string/tv_categoria_cienciaficcion"
-                            android:textSize="17dp" />
+                            android:textSize="17dp"
+                            android:paddingStart="16dp"/>
 
                         <Switch
                             android:id="@+id/swCienciaFiccion"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:minWidth="48dp"
-                            android:minHeight="48dp" />
+                            android:minHeight="48dp"
+                            android:paddingEnd="16dp"/>
                     </LinearLayout>
                     <!-- SW ANIMACION -->
                     <LinearLayout
@@ -253,14 +263,16 @@
                             android:paddingTop="8dp"
                             android:paddingBottom="8dp"
                             android:text="@string/tv_categoria_animacion"
-                            android:textSize="17dp" />
+                            android:textSize="17dp"
+                            android:paddingStart="16dp"/>
 
                         <Switch
                             android:id="@+id/swAnimacion"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:minWidth="48dp"
-                            android:minHeight="48dp" />
+                            android:minHeight="48dp"
+                            android:paddingEnd="16dp"/>
                     </LinearLayout>
                     <!-- SW TERROR -->
                     <LinearLayout
@@ -276,14 +288,16 @@
                             android:paddingTop="8dp"
                             android:paddingBottom="8dp"
                             android:text="@string/tv_categoria_terror"
-                            android:textSize="17dp" />
+                            android:textSize="17dp"
+                            android:paddingStart="16dp"/>
 
                         <Switch
                             android:id="@+id/swTerror"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:minWidth="48dp"
-                            android:minHeight="48dp" />
+                            android:minHeight="48dp"
+                            android:paddingEnd="16dp"/>
                     </LinearLayout>
                 </LinearLayout>
             </LinearLayout>
@@ -360,14 +374,16 @@
                             android:paddingTop="8dp"
                             android:paddingBottom="8dp"
                             android:text="@string/tv_apta_todos_publicos"
-                            android:textSize="17dp" />
+                            android:textSize="17dp"
+                            android:paddingStart="16dp"/>
 
                         <ImageView
                             android:id="@+id/iv_check_todos_publicos"
                             android:layout_width="wrap_content"
                             android:layout_height="match_parent"
                             android:layout_weight="1"
-                            app:srcCompat="@drawable/check_24" />
+                            app:srcCompat="@drawable/check_24"
+                            android:paddingEnd="16dp"/>
                     </LinearLayout>
 
                     <LinearLayout
@@ -384,7 +400,8 @@
                             android:paddingTop="8dp"
                             android:paddingBottom="8dp"
                             android:text="@string/tv_mayores_siete"
-                            android:textSize="17dp" />
+                            android:textSize="17dp"
+                            android:paddingStart="16dp"/>
 
                         <ImageView
                             android:id="@+id/iv_check_siete"
@@ -392,7 +409,8 @@
                             android:layout_height="match_parent"
                             android:layout_weight="1"
                             android:visibility="invisible"
-                            app:srcCompat="@drawable/check_24" />
+                            app:srcCompat="@drawable/check_24"
+                            android:paddingEnd="16dp"/>
                     </LinearLayout>
 
                     <LinearLayout
@@ -409,7 +427,8 @@
                             android:paddingTop="8dp"
                             android:paddingBottom="8dp"
                             android:text="@string/tv_mayores_trece"
-                            android:textSize="17dp" />
+                            android:textSize="17dp"
+                            android:paddingStart="16dp"/>
 
                         <ImageView
                             android:id="@+id/iv_check_trece"
@@ -417,7 +436,8 @@
                             android:layout_height="match_parent"
                             android:layout_weight="1"
                             android:visibility="invisible"
-                            app:srcCompat="@drawable/check_24" />
+                            app:srcCompat="@drawable/check_24"
+                            android:paddingEnd="16dp"/>
                     </LinearLayout>
 
                     <LinearLayout
@@ -434,7 +454,8 @@
                             android:paddingTop="8dp"
                             android:paddingBottom="8dp"
                             android:text="@string/tv_mayores_dieciocho"
-                            android:textSize="17dp" />
+                            android:textSize="17dp"
+                            android:paddingStart="16dp"/>
 
                         <ImageView
                             android:id="@+id/iv_check_dieciocho"
@@ -442,7 +463,8 @@
                             android:layout_height="match_parent"
                             android:layout_weight="1"
                             android:visibility="invisible"
-                            app:srcCompat="@drawable/check_24" />
+                            app:srcCompat="@drawable/check_24"
+                            android:paddingEnd="16dp"/>
                     </LinearLayout>
                 </LinearLayout>
             </LinearLayout>

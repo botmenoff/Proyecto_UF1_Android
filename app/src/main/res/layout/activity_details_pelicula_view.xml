@@ -3,23 +3,24 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/l"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".DetailsPeliculaView">
 
 
-<TextView
+    <TextView
         android:id="@+id/tvNombrePeli"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
+        android:textSize="22dp"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:textSize="22dp"
-        android:textStyle="bold"/>
+        app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
         android:id="@+id/ivImagenPeli"
@@ -71,14 +72,14 @@
                         android:layout_width="299dp"
                         android:layout_height="48dp"
                         android:gravity="center"
-                        android:text="@string/tv_titulo_peli"
+                        android:text="@string/tv_resumen_peli"
                         android:textAlignment="viewStart"
+                        android:textSize="17dp"
+                        android:textStyle="bold"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintStart_toEndOf="@+id/ivExpandTitulo"
                         app:layout_constraintTop_toTopOf="parent"
-                        tools:ignore="RtlCompat"
-                        android:textSize="17dp"
-                        android:textStyle="bold"/>
+                        tools:ignore="RtlCompat" />
 
                     <ImageView
                         android:id="@+id/ivExpandTitulo"
@@ -96,26 +97,28 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:orientation="vertical"
-                    android:visibility="gone"
                     tools:visibility="gone">
 
                     <TextView
                         android:id="@+id/tvTituloPeliOculto"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:textSize="17dp"/>
+                        android:paddingStart="16dp"
+                        android:paddingEnd="16dp"
+                        android:textSize="17dp" />
                 </LinearLayout>
 
             </LinearLayout>
 
             <!-- Acordeon para Reparto de la pelicula -->
             <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="16dp"
-            android:layout_marginEnd="8dp"
-            android:orientation="vertical">
+                android:id="@+id/lyAcordeonRepartoDetalles"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="8dp"
+                android:orientation="vertical">
 
                 <LinearLayout
                     android:id="@+id/acordeonReparto"
@@ -132,12 +135,12 @@
                         android:gravity="center"
                         android:text="@string/tv_reparto_peli"
                         android:textAlignment="viewStart"
+                        android:textSize="17dp"
+                        android:textStyle="bold"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintStart_toEndOf="@+id/ivExpandReparto"
                         app:layout_constraintTop_toTopOf="parent"
-                        tools:ignore="RtlCompat"
-                        android:textSize="17dp"
-                        android:textStyle="bold"/>
+                        tools:ignore="RtlCompat" />
 
                     <ImageView
                         android:id="@+id/ivExpandReparto"
@@ -161,13 +164,16 @@
                         android:id="@+id/tvRepartoPeliOculto"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:textSize="17dp"/>
+                        android:textSize="17dp"
+                        android:paddingStart="16dp"
+                        android:paddingEnd="16dp"/>
                 </LinearLayout>
 
             </LinearLayout>
 
             <!-- Acordeon para Categorias de la pelicula -->
             <LinearLayout
+                android:id="@+id/lyAcordeonCategoriasDetalles"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
@@ -190,12 +196,12 @@
                         android:gravity="center"
                         android:text="@string/tv_categorias_peli"
                         android:textAlignment="viewStart"
+                        android:textSize="17dp"
+                        android:textStyle="bold"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintStart_toEndOf="@+id/ivExpandCategoria"
                         app:layout_constraintTop_toTopOf="parent"
-                        tools:ignore="RtlCompat"
-                        android:textSize="17dp"
-                        android:textStyle="bold"/>
+                        tools:ignore="RtlCompat" />
 
                     <ImageView
                         android:id="@+id/ivExpandCategoria"
@@ -219,13 +225,16 @@
                         android:id="@+id/tvCategoriaPeliOculto"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:textSize="17dp"/>
+                        android:textSize="17dp"
+                        android:paddingStart="16dp"
+                        android:paddingEnd="16dp"/>
                 </LinearLayout>
 
             </LinearLayout>
 
             <!-- Acordeon para Idiomas de la pelicula -->
             <LinearLayout
+                android:id="@+id/lyAcordeonIdiomasDetalles"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
@@ -248,12 +257,12 @@
                         android:gravity="center"
                         android:text="@string/tv_idiomas_peli"
                         android:textAlignment="viewStart"
+                        android:textSize="17dp"
+                        android:textStyle="bold"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintStart_toEndOf="@+id/ivExpandIdioma"
                         app:layout_constraintTop_toTopOf="parent"
-                        tools:ignore="RtlCompat"
-                        android:textSize="17dp"
-                        android:textStyle="bold"/>
+                        tools:ignore="RtlCompat" />
 
                     <ImageView
                         android:id="@+id/ivExpandIdioma"
@@ -277,13 +286,16 @@
                         android:id="@+id/tvIdiomaPeliOculto"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:textSize="17dp"/>
+                        android:textSize="17dp"
+                        android:paddingStart="16dp"
+                        android:paddingEnd="16dp"/>
                 </LinearLayout>
 
             </LinearLayout>
 
             <!-- Acordeon para Restriccion de Edad de la pelicula -->
             <LinearLayout
+                android:id="@+id/lyAcordeonEdadDetalles"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
@@ -306,12 +318,12 @@
                         android:gravity="center"
                         android:text="@string/tv_edad_peli"
                         android:textAlignment="viewStart"
+                        android:textSize="17dp"
+                        android:textStyle="bold"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintStart_toEndOf="@+id/ivExpandEdad"
                         app:layout_constraintTop_toTopOf="parent"
-                        tools:ignore="RtlCompat"
-                        android:textSize="17dp"
-                        android:textStyle="bold"/>
+                        tools:ignore="RtlCompat" />
 
                     <ImageView
                         android:id="@+id/ivExpandEdad"
@@ -335,7 +347,9 @@
                         android:id="@+id/tvEdadPeliOculto"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:textSize="17dp"/>
+                        android:textSize="17dp"
+                        android:paddingStart="16dp"
+                        android:paddingEnd="16dp"/>
                 </LinearLayout>
 
             </LinearLayout>

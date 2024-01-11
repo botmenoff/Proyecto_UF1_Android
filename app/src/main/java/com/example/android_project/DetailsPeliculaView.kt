@@ -56,9 +56,11 @@ class DetailsPeliculaView : AppCompatActivity() {
          * Desplegar o contraer el acordeon
          */
         val tituloPeliOculto = binding.tvTituloPeliOculto
-        tituloPeliOculto.text = descripcion;
+        tituloPeliOculto.visibility = View.GONE
+        tituloPeliOculto.text = descripcion
         val ivExpandTitulo = binding.ivExpandTitulo
-        ivExpandTitulo.setOnClickListener {
+        val lyAcordeonResumenDetalles = binding.acordeonTitulo
+        lyAcordeonResumenDetalles.setOnClickListener {
             if (tituloPeliOculto.visibility == View.VISIBLE) { // Si tenemos desplegado el acordeon lo contraemos
                 tituloPeliOculto.visibility = View.GONE
                 ivExpandTitulo.setImageResource(R.drawable.expand_more_24)
@@ -72,9 +74,11 @@ class DetailsPeliculaView : AppCompatActivity() {
          * Acordeon REPARTO
          */
         val repartoPeliOculto = binding.tvRepartoPeliOculto
+        repartoPeliOculto.visibility = View.GONE
         repartoPeliOculto.text = repartoString
         val ivExpandReparto = binding.ivExpandReparto
-        ivExpandReparto.setOnClickListener {
+        val lyAcordeonRepartoDetalles = binding.acordeonReparto
+        lyAcordeonRepartoDetalles.setOnClickListener {
             if (repartoPeliOculto.visibility == View.VISIBLE) {
                 repartoPeliOculto.visibility = View.GONE
                 ivExpandReparto.setImageResource(R.drawable.expand_more_24)
@@ -88,9 +92,11 @@ class DetailsPeliculaView : AppCompatActivity() {
          * Acordeon CATEGORIAS
          */
         val categoriasPeliOculto = binding.tvCategoriaPeliOculto
+        categoriasPeliOculto.visibility = View.GONE
         categoriasPeliOculto.text = categorias
         val ivExpandCategorias = binding.ivExpandCategoria
-        ivExpandCategorias.setOnClickListener {
+        val lyAcordeonCategoriasDetalles = binding.acordeonCategoria
+        lyAcordeonCategoriasDetalles.setOnClickListener {
             if (categoriasPeliOculto.visibility == View.VISIBLE) {
                 categoriasPeliOculto.visibility = View.GONE
                 ivExpandCategorias.setImageResource(R.drawable.expand_more_24)
@@ -104,9 +110,11 @@ class DetailsPeliculaView : AppCompatActivity() {
          * Acordeon IDIOMAS
          */
         val idiomasPeliOculto = binding.tvIdiomaPeliOculto
+        idiomasPeliOculto.visibility = View.GONE
         idiomasPeliOculto.text = idiomas
         val ivExpandIdiomas = binding.ivExpandIdioma
-        ivExpandIdiomas.setOnClickListener {
+        val lyAcordeonIdiomasDetalles = binding.acordeonIdiomas
+        lyAcordeonIdiomasDetalles.setOnClickListener {
             if (idiomasPeliOculto.visibility == View.VISIBLE) {
                 idiomasPeliOculto.visibility = View.GONE
                 ivExpandIdiomas.setImageResource(R.drawable.expand_more_24)
@@ -120,9 +128,11 @@ class DetailsPeliculaView : AppCompatActivity() {
          * Acordeon EDAD
          */
         val edadPeliOculto = binding.tvEdadPeliOculto
+        edadPeliOculto.visibility = View.GONE
         edadPeliOculto.text = edad
         val ivExpandEdad = binding.ivExpandEdad
-        ivExpandEdad.setOnClickListener {
+        val lyAcordeonEdadDetalles = binding.acordeonEdad
+        lyAcordeonEdadDetalles.setOnClickListener {
             if (edadPeliOculto.visibility == View.VISIBLE) {
                 edadPeliOculto.visibility = View.GONE
                 ivExpandEdad.setImageResource(R.drawable.expand_more_24)
