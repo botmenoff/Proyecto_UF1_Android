@@ -64,7 +64,8 @@
                     android:layout_marginTop="8dp"
                     android:layout_marginBottom="8dp"
                     android:text="@string/tv_categoria_recientes"
-                    android:textSize="20sp" />
+                    android:textSize="22dp"
+                    android:textStyle="bold"/>
 
                 <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/rvPeliculasRecientes"
@@ -94,7 +95,8 @@
                     android:layout_marginTop="8dp"
                     android:layout_marginBottom="8dp"
                     android:text="@string/tv_categoria_accion"
-                    android:textSize="24sp" />
+                    android:textSize="22dp"
+                    android:textStyle="bold" />
 
                 <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/rvPeliculasAccion"
@@ -124,7 +126,8 @@
                     android:layout_marginTop="8dp"
                     android:layout_marginBottom="8dp"
                     android:text="@string/tv_categoria_comedia"
-                    android:textSize="24sp" />
+                    android:textSize="22dp"
+                    android:textStyle="bold" />
 
                 <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/rvPeliculasComedia"
@@ -154,7 +157,8 @@
                     android:layout_marginTop="8dp"
                     android:layout_marginBottom="8dp"
                     android:text="@string/tv_categoria_drama"
-                    android:textSize="24sp" />
+                    android:textSize="22dp"
+                    android:textStyle="bold" />
 
                 <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/rvPeliculasDrama"
@@ -184,7 +188,8 @@
                     android:layout_marginTop="8dp"
                     android:layout_marginBottom="8dp"
                     android:text="@string/tv_categoria_cienciaficcion"
-                    android:textSize="24sp" />
+                    android:textSize="22dp"
+                    android:textStyle="bold" />
 
                 <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/rvPeliculasCienciaFiccion"
@@ -214,7 +219,8 @@
                     android:layout_marginTop="8dp"
                     android:layout_marginBottom="8dp"
                     android:text="@string/tv_categoria_animacion"
-                    android:textSize="24sp" />
+                    android:textSize="22dp"
+                    android:textStyle="bold" />
 
                 <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/rvPeliculasAnimacion"
@@ -244,7 +250,8 @@
                     android:layout_marginTop="8dp"
                     android:layout_marginBottom="8dp"
                     android:text="@string/tv_categoria_terror"
-                    android:textSize="24sp" />
+                    android:textSize="22dp"
+                    android:textStyle="bold" />
 
                 <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/rvPeliculasTerror"
@@ -298,7 +305,9 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/tv_icon_home" />
+                    android:text="@string/tv_icon_home"
+                    android:textSize="17dp"
+                    />
             </LinearLayout>
 
             <!-- Icono Buscador -->
@@ -318,7 +327,9 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/tv_icon_buscador" />
+                    android:text="@string/tv_icon_buscador"
+                    android:textSize="17dp"
+                    />
             </LinearLayout>
 
             <!-- Icono Preferencias -->
@@ -338,7 +349,9 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/tv_icon_preferencias" />
+                    android:text="@string/tv_icon_preferencias"
+                    android:textSize="17dp"
+                    />
             </LinearLayout>
 
         </LinearLayout>

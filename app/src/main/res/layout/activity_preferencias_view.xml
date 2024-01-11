@@ -32,8 +32,8 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             android:textStyle="bold"
-            android:textSize="20dp"/>
-      
+            android:textSize="22dp"/>
+
         <!-- Inp Nombre Usuario -->
         <LinearLayout
             android:id="@+id/linearLayout"
@@ -55,14 +55,15 @@
                 android:paddingBottom="8dp"
                 android:text="@string/tv_escribir_nombre"
                 android:textStyle="bold"
-                android:textSize="20dp"/>
+                android:textSize="17dp"/>
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/inp_nombre"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="@string/inp_nombre"
-                android:minHeight="48dp" />
+                android:minHeight="48dp"
+                android:textSize="17dp"/>
         </LinearLayout>
 
         <!-- Acordeon Para Switch de Categorias -->
@@ -84,14 +85,14 @@
                 android:orientation="horizontal">
 
                 <TextView
-                    android:id="@+id/tvCategoriasFavoritas"
+                    android:id="@+id/tv_nombre_peli"
                     android:layout_width="299dp"
                     android:layout_height="48dp"
                     android:gravity="center"
                     android:text="@string/tv_categorias_favoritas"
                     android:textAlignment="viewStart"
                     app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintStart_toEndOf="@+id/ivExpandCategoriasFavoritas"
+                    app:layout_constraintStart_toEndOf="@+id/iv_expand_peli"
                     app:layout_constraintTop_toTopOf="parent"
                     tools:ignore="RtlCompat"
                     android:textStyle="bold"
@@ -134,7 +135,8 @@
                             android:layout_weight="1"
                             android:paddingTop="8dp"
                             android:paddingBottom="8dp"
-                            android:text="@string/tv_categoria_estreno" />
+                            android:text="@string/tv_categoria_estreno"
+                            android:textSize="17dp" />
 
                         <Switch
                             android:id="@+id/swEstreno"
@@ -157,7 +159,8 @@
                             android:layout_weight="1"
                             android:paddingTop="8dp"
                             android:paddingBottom="8dp"
-                            android:text="@string/tv_categoria_accion" />
+                            android:text="@string/tv_categoria_accion"
+                            android:textSize="17dp" />
 
                         <Switch
                             android:id="@+id/swAccion"
@@ -180,7 +183,8 @@
                             android:layout_weight="1"
                             android:paddingTop="8dp"
                             android:paddingBottom="8dp"
-                            android:text="@string/tv_categoria_comedia" />
+                            android:text="@string/tv_categoria_comedia"
+                            android:textSize="17dp" />
 
                         <Switch
                             android:id="@+id/swComedia"
@@ -202,7 +206,8 @@
                             android:layout_weight="1"
                             android:paddingTop="8dp"
                             android:paddingBottom="8dp"
-                            android:text="@string/tv_categoria_drama" />
+                            android:text="@string/tv_categoria_drama"
+                            android:textSize="17dp" />
 
                         <Switch
                             android:id="@+id/swDrama"
@@ -224,7 +229,8 @@
                             android:layout_weight="1"
                             android:paddingTop="8dp"
                             android:paddingBottom="8dp"
-                            android:text="@string/tv_categoria_cienciaficcion" />
+                            android:text="@string/tv_categoria_cienciaficcion"
+                            android:textSize="17dp" />
 
                         <Switch
                             android:id="@+id/swCienciaFiccion"
@@ -246,7 +252,8 @@
                             android:layout_weight="1"
                             android:paddingTop="8dp"
                             android:paddingBottom="8dp"
-                            android:text="@string/tv_categoria_animacion" />
+                            android:text="@string/tv_categoria_animacion"
+                            android:textSize="17dp" />
 
                         <Switch
                             android:id="@+id/swAnimacion"
@@ -268,7 +275,8 @@
                             android:layout_weight="1"
                             android:paddingTop="8dp"
                             android:paddingBottom="8dp"
-                            android:text="@string/tv_categoria_terror" />
+                            android:text="@string/tv_categoria_terror"
+                            android:textSize="17dp" />
 
                         <Switch
                             android:id="@+id/swTerror"
@@ -308,7 +316,7 @@
                     android:text="@string/tv_seleccionar_edad"
                     android:textAlignment="viewStart"
                     app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintStart_toEndOf="@+id/ivExpandCategoriasFavoritas"
+                    app:layout_constraintStart_toEndOf="@+id/iv_expand_peli"
                     app:layout_constraintTop_toTopOf="parent"
                     tools:ignore="RtlCompat"
                     android:textStyle="bold"
@@ -351,7 +359,8 @@
                             android:layout_weight="1"
                             android:paddingTop="8dp"
                             android:paddingBottom="8dp"
-                            android:text="@string/tv_apta_todos_publicos" />
+                            android:text="@string/tv_apta_todos_publicos"
+                            android:textSize="17dp" />
 
                         <ImageView
                             android:id="@+id/iv_check_todos_publicos"
@@ -374,7 +383,8 @@
                             android:layout_weight="1"
                             android:paddingTop="8dp"
                             android:paddingBottom="8dp"
-                            android:text="@string/tv_mayores_siete" />
+                            android:text="@string/tv_mayores_siete"
+                            android:textSize="17dp" />
 
                         <ImageView
                             android:id="@+id/iv_check_siete"
@@ -398,7 +408,8 @@
                             android:layout_weight="1"
                             android:paddingTop="8dp"
                             android:paddingBottom="8dp"
-                            android:text="@string/tv_mayores_trece" />
+                            android:text="@string/tv_mayores_trece"
+                            android:textSize="17dp" />
 
                         <ImageView
                             android:id="@+id/iv_check_trece"
@@ -422,7 +433,8 @@
                             android:layout_weight="1"
                             android:paddingTop="8dp"
                             android:paddingBottom="8dp"
-                            android:text="@string/tv_mayores_dieciocho" />
+                            android:text="@string/tv_mayores_dieciocho"
+                            android:textSize="17dp" />
 
                         <ImageView
                             android:id="@+id/iv_check_dieciocho"
@@ -453,7 +465,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout4" />
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout4"
+        android:textSize="17dp"/>
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottomNavigationView"
@@ -489,7 +502,9 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/tv_icon_home" />
+                    android:text="@string/tv_icon_home"
+                    android:textSize="17dp"
+                    />
             </LinearLayout>
 
             <!-- Icono Buscador -->
@@ -509,7 +524,8 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/tv_icon_buscador" />
+                    android:text="@string/tv_icon_buscador"
+                    android:textSize="17dp"/>
             </LinearLayout>
 
             <!-- Icono Preferencias -->
@@ -529,7 +545,8 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/tv_icon_preferencias" />
+                    android:text="@string/tv_icon_preferencias"
+                    android:textSize="17dp"/>
             </LinearLayout>
 
         </LinearLayout>

@@ -37,33 +37,6 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         /**
-         * Añado todas las pelis a PelisStore para poder usarlo en otros sitios
-         */
-        // Iterar sobre la mutableList
-        for (peli in pRecientes) {
-            PeliculasStore.agregarPelicula(peli)
-        }
-        for (peli in pAccion) {
-            PeliculasStore.agregarPelicula(peli)
-        }
-        for (peli in pComedia) {
-            PeliculasStore.agregarPelicula(peli)
-        }
-        for (peli in pDrama) {
-            PeliculasStore.agregarPelicula(peli)
-        }
-        for (peli in pCienciaFiccion) {
-            PeliculasStore.agregarPelicula(peli)
-        }
-        for (peli in pAccion) {
-            PeliculasStore.agregarPelicula(peli)
-        }
-        for (peli in pTerror) {
-            PeliculasStore.agregarPelicula(peli)
-        }
-
-
-        /**
          * Obtemos los parametros pasados en caso de tener
          */
         val extras = intent.extras
@@ -195,6 +168,31 @@ class MainActivity : AppCompatActivity() {
         pelisTerrorLayout.adapter = listPeliculasTerrorAdapter
         pelisTerrorLayout.layoutManager = LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
 
+        /**
+         * Añado todas las pelis a PelisStore para poder usarlo en otros sitios
+         */
+        // Iterar sobre la mutableList
+        for (peli in pRecientes) {
+            PeliculasStore.agregarPelicula(peli)
+        }
+        for (peli in pAccion) {
+            PeliculasStore.agregarPelicula(peli)
+        }
+        for (peli in pComedia) {
+            PeliculasStore.agregarPelicula(peli)
+        }
+        for (peli in pDrama) {
+            PeliculasStore.agregarPelicula(peli)
+        }
+        for (peli in pCienciaFiccion) {
+            PeliculasStore.agregarPelicula(peli)
+        }
+        for (peli in pAccion) {
+            PeliculasStore.agregarPelicula(peli)
+        }
+        for (peli in pTerror) {
+            PeliculasStore.agregarPelicula(peli)
+        }
 
         /**
          * MENU
