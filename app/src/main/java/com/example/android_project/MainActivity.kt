@@ -122,7 +122,7 @@ class MainActivity : AppCompatActivity() {
          * COMEDIA
          */
         listPeliculasComediaAdapter = ListPeliculasAdapter(pComedia, applicationContext)
-        listPeliculasComediaAdapter.generarPelisComedia()
+        listPeliculasComediaAdapter.generarPelisAccion()
 
         val pelisComediaLayout = binding.rvPeliculasComedia
         pelisComediaLayout.adapter = listPeliculasComediaAdapter
@@ -132,7 +132,7 @@ class MainActivity : AppCompatActivity() {
          * DRAMA
          */
         listPeliculasDramaAdapter = ListPeliculasAdapter(pDrama, applicationContext)
-        listPeliculasDramaAdapter.generarPelisDrama()
+        listPeliculasDramaAdapter.generarPelisRecientes()
 
         val pelisDramaLayout = binding.rvPeliculasDrama
         pelisDramaLayout.adapter = listPeliculasDramaAdapter
