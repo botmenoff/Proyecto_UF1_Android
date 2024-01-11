@@ -26,7 +26,7 @@
         <activity
             android:name=".DetailsPeliculaView"
             android:exported="true"
-            android:theme="@style/AppTheme"
+            android:theme="@style/AppTheme.Details"
             android:parentActivityName=".MainActivity" />
 
         <activity
